@@ -1,0 +1,17 @@
+.small-card{
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 0 10px rgba(238, 238, 238, 0.75);
+}
+.small-card > .card-body {
+
+}
+.small-card-image-container{
+    width: 100%;
+    height:120px;
+}
+.small-card-image{
+    object-fit:  cover;
+    width: 100%;
+    height: 100%;
+}

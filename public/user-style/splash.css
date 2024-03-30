@@ -1,0 +1,26 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.splash-container{
+    text-align: center;
+    width: 100%;
+    flex-direction: column;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(125deg, #022125 00%, #154952 50%,#022125 100%);
+}
+
+.kolang-logo{
+    width:130px;
+}
+
+.loading{
+    color: white;
+    font-size: 20px;
+    font-family: "Sakkal Majalla";
+    direction: rtl;
+    padding: 15px 0px;
+}

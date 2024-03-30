@@ -1,0 +1,8 @@
+.category-container{
+    width: 100%;
+    padding-top:15vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: lightgrey;
+}

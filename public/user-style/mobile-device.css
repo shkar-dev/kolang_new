@@ -1,0 +1,106 @@
+/*smaller than 728 px*/
+@media (max-width: 728px) {
+      .landing-section{
+          height: unset;
+      }
+    .landing-left{
+        display: none;
+    }
+    .landing-right{
+        height: 100vh;
+        padding: 0px 10px;
+    }
+    .user-navbar-container{
+        margin: 0;
+        top: 0px;
+        right:0%;
+        width: 100%;
+    }
+
+    #section03{
+        left: unset;
+        bottom: 14%;
+    }
+    .landing-heading{
+        padding: 20px 0px;
+        font-size: 8vw;
+        direction: rtl;
+        font-family: 'speda';
+    }
+    .landing-heading-2{
+        font-size: 1.8em;
+    }
+    .landing-button-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0px;
+    }
+    .logo-loading-container{
+        z-index: 10;
+    }
+/*    second-section*/
+    .first-content-container > img{
+        object-fit: cover;
+    }
+    .first-content-content > div { padding: 15px}
+    .p-icon{
+        width: fit-content;
+    }
+    .second-section{
+        height: unset;
+    }
+
+/*    footer*/
+    .footer-section-1{
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 20px 0px;
+        width: 100%;
+    }
+    .footer-section-1 > i{
+        font-size: 33px;
+    }
+    .footer-section-2{
+        flex-wrap: wrap;
+    }
+    .footer-section-2{
+        border:none;
+        flex-direction: column;
+    }
+    .footer-section-2 > a {
+        padding: 15px;
+    }
+    .footer-content-container{
+        flex-direction: column-reverse;
+        padding: 30px 0px;
+    }
+    .footer-about{
+        flex-direction: column;
+        height: unset;
+    }
+    .copyright{
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .mobile-navigation-container{
+        display: flex;
+    }
+    .user-navbar-container{
+        display: none;
+    }
+}
+
+/*greater than 730px*/
+@media (min-width: 728px) {
+    #section03{
+        left: unset;
+        bottom: 14%;
+    }
+    .mobile-navigation-container{
+        display: none;
+    }
+    .user-navbar-container{
+        display: flex;
+    }
+}

@@ -1,0 +1,95 @@
+.mobile-navigation-container{
+    width: 100%;
+    height: 85px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 10px 25px;
+    background:linear-gradient(40deg, #022125 00%, #256372 50%, #022125 100%);
+    align-items: center;
+    z-index: 10;
+    margin: 0  ;
+}
+.mobile-navigation-container > img {
+    width: 60px;
+}
+
+.mobile-navigation-container > i {
+    font-size:35px;
+    color: white;
+}
+.mobile-navigation-drawer-container {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+.mobile-navigation-drawer{
+    width: 80%;
+    height: 100%;
+    /*background:linear-gradient(110deg, #0E1C26 00%, #2A454B 50%,#294861 100%);*/
+    background: white;
+}
+.mobile-navigation-drawer > .row{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    /*border-bottom: 1px solid rgba(0,0,0,0.2);*/
+    margin: 0;
+
+}
+
+.mobile-navigation-drawer > .row > i {
+    font-size: 50px;
+     color: #154952;
+    width: fit-content;
+}
+
+.mobile-navigation-drawer > .row > img{
+    width: 110px;
+}
+.mobile-navigation-drawer-title{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.mobile-navigation-drawer-title > p {
+    font-size: 20px;
+    color: #154952;
+    font-family: 'speda';
+    padding: 20px 15px;
+}
+.route-container{
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.route-container > a {
+    padding: 16px 10px 16px 30px;
+    font-size: 16px;
+    font-family: 'speda';
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    color: #154952;
+    text-decoration: none;
+}
+
+.test-test{
+    width: 100%;
+    height: 100vh;
+    z-index: 12;
+    background: lightgrey;
+    position: fixed;
+    top: 0;
+}

@@ -1,0 +1,85 @@
+.footer {
+    width: 100%;
+    background: #2C4144;
+    margin: 0;
+
+    position: relative;
+    overflow: hidden;
+    direction: ltr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wave-footer{
+    width: 100%;
+    transform: rotate(0deg) scale(1.4) translateX(-100px);
+    opacity: 0.1;
+    position: absolute;right: 0;
+    top: 0;
+    z-index: 4;
+}
+.footer-logo{
+    width: 120px;
+}
+.footer-section-1{
+    padding: 50px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer-social-media-icon {
+    font-size: 25px;
+    color: white;
+    padding: 15px 0px;
+}
+.footer-section-2{
+    height: 45%;
+    border-right: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    align-items: center;
+}
+.footer-tabs{
+    padding: 0px 30px;
+    color: white;
+    font-size: 18px;
+    font-family: 'speda';
+    text-decoration: none;
+}
+.footer-section-3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-about{
+    height: 50px;
+    background: #2E5257;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+
+    z-index: 5;
+}
+.footer-about > .team {
+    color: #f0f0f0;
+    font-size: 14px;
+    font-family: "Barlow Medium";
+}
+.footer-about > .team > span{
+    color: #e0e0e0;
+    font-family: "Barlow ExtraLight";
+}
+.copyright{
+    color: #e0e0e0;
+}
+
+.footer-content-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
