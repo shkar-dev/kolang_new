@@ -1,16 +1,12 @@
 <div class="px-3 py-2  bg-white aaa h-100">
-
     <link rel="stylesheet" href="{{ asset('admin/fullpage.css') }}">
     <script src="{{ asset('admin/fullpage.js') }}"></script>
-
     <div class="content-list-buttons" style="background: #023941d4;border-radius:5px;box-shadow: 0 0px 10px #e0e0e0">
         <div class=" list-title">
             <div id="comment-clicker" style="color: white;margin: 0px">زیادکردنی بابەت</div>
-            {{--            <a href="#comment-clicker" id="" style="color: white;margin: 0px">زیادکردنی بابەت</a> --}}
         </div>
         <x-back-button />
     </div>
-
     <div class="row p-3">
         <ul class="nav nav-tabs custom-add-subject-tab">
             <li class="nav-item">
@@ -57,14 +53,10 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="profile">
-                <div class=" section custom-row p-4 px-3 justify-content-between">
-                    <div id="froala" style=""></div>
-                </div>
+                <x-froala />
             </div>
-
         </div>
     </div>
-
     {{--         <div class="row   p-0 justify-content-between"> --}}
     {{--            <div class=" col "> --}}
     {{--                <div class="form-floating mb-3"> --}}
@@ -191,10 +183,6 @@
     // $('#comment-clicker').on('click',function (){
     //     alert('a')
     // })
-</script>
-<script type="text/javascript" src="node_modules/froala-editor/js/froala_editor.pkgd.min.js"></script>
-<script>
-    var editor = new FroalaEditor('#froala', {});
 </script>
 
 </div>

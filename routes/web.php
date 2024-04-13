@@ -3,7 +3,9 @@
 use App\Livewire\Admin\Subject\Society;
 use App\Livewire\Article;
 use App\Livewire\Ethics;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +45,20 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/writer', \App\Livewire\Admin\Staff\Staff::class)->name('admin.staff.writer');
     Route::get('/add-writer', \App\Livewire\Admin\Staff\AddStaff::class)->name('admin.staff.add-writer');
 
-
+    Route::get('test2', function () {
+        return "welcmoe0";
+    })->name('admin.upload.froala');
+    Route::post('/test33',[\App\Http\Controllers\FroalaUploadImageController::class,'store'])->name('admin.upload.store');
     Route::get('/documents', \App\Livewire\Admin\Setting\Documents::class)->name('admin.setting.document');
+});
+Route::post('/upload_image',function (Request $request){
+
+    $image = $request->file('file');
+
+    $imageName = time().'.'.$image->getClientOriginalExtension();
+
+    $image->move(public_path('uploads/'), $imageName);
+
+    return response()->json(['link' => '/uploads/'.$imageName]);
+
 });

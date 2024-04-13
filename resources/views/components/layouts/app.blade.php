@@ -32,13 +32,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" />
         <link rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.rtl.min.css" />
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/css/froala_editor.min.css"
-            integrity="sha512-G6PT5gDSYDKUq3VZqV4iKw6XNaz9jQd9zslIf+uJcgelmqSFOwmv7UM+QW3NRphYsGmG0Dlb1nNLp6HX/pwf3A=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/js/froala_editor.min.js"
-            integrity="sha512-w4jW1LYhfHs76gpWwx7itIM5HHvvw0Co2AJA60Xgqiljzj7jGnaRyV/CxOFO5PCbUuxVeBuKlgPr6qoq3eoUmw=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        >
         <style>
             .material-symbols-outlined {
                 font-variation-settings:
@@ -75,9 +69,7 @@
                 $(this).addClass(' menubar-item-active');
             })
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.1.4/js/froala_editor.min.js"
-            integrity="sha512-yPOpUhNntIRUVQib/cEJu0qXLE/BerbIPdtVtVia4J/2tyD1pIsmMhIU2u1ePc4V0nl10WfQIKicNHrT9fGMQA=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -99,7 +91,5 @@
         {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script> --}}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
-
-    </body>
 
 </html>

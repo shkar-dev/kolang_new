@@ -21,10 +21,7 @@ h6 {
     font-family: Speda !important;
 }
 
-.fr-wrapper {
 
-    border: none !important;
-}
 
 .fr-second-toolbar {
     border: none !important;
@@ -413,8 +410,13 @@ body {
 }
 
 .section {
-    overflow-y: auto;
-    /* height: 510px; */
+    overflow-y: auto !important;
+    height: 480px;
+}
+
+.fr-wrapper {
+    min-height: 330px !important;
+    border: none !important;
 }
 
 .list-content-container {
