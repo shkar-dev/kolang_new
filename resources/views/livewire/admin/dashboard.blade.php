@@ -27,7 +27,7 @@
                 <p>ستاف</p>
             </div>
 
-            <div class="iconbar-icon setting-icon">
+            <div class="iconbar-icon setting-icon  {{ preg_match('(documents|document1)', request()->getPathInfo()) ? ' icon-bar-active-rtl' : '' }}">
                 <div>
                     <i class="fa-solid fa-gear"></i>
                 </div>
@@ -87,7 +87,7 @@
                     <p>دەسەڵاتەکان</p>
                 </div>
                 <div class="menubar-item  setting-item {{ str_contains(request()->getPathInfo(), 'documents') ? 'menubar-item-active' : '' }}"
-                    href="{{ route('admin.setting.document') }}" wire:navigate ">
+                    href="{{ route('admin.setting.document') }}" wire:navigate >
                     <p>بەڵگەنامەکان</p>
                 </div>
             </div>

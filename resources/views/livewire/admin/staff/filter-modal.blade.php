@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="row  my-1">
-        <input type="text" class="form-control filter-input    " wire:keydown="changeFilter" wire:model="staffType" placeholder="جۆری ستاف" />
+        <input disabled type="text" class="form-control filter-input" wire:keydown="changeFilter" wire:model="staffType"  placeholder="جۆری ستاف" />
     </div>
     <div class="row  my-1">
         <input type="text" class="form-control filter-input  "  wire:keydown="changeFilter" wire:model="phone1" placeholder="تەلەفون ١ " />

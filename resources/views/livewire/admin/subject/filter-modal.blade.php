@@ -7,8 +7,7 @@
     </div>
     <div class="row my-2 p-0 justify-content-between">
         <div class=" col ">
-{{--            <label class="rebar form-label" >بابەت  </label>--}}
-            <input type="text" class="form-control  filter-input  " wire:keydown="changeFilter"  wire:model="subject" placeholder="بابەت" />
+             <input type="text" class="form-control  filter-input  " wire:keydown="changeFilter"  wire:model="subject" placeholder="بابەت" />
         </div>
         <div class=" col ">
             <input type="text" class="form-control  filter-input  " wire:keydown="changeFilter" wire:model="author" placeholder="نووسەر" />
@@ -18,18 +17,15 @@
         <input type="text" class="form-control filter-input    " wire:keydown="changeFilter" wire:model="translator" placeholder="وەرگێڕ" />
     </div>
     <div class="row  my-1">
-        <input type="text" class="form-control filter-input  "  wire:keydown="changeFilter" wire:model="subjectType" placeholder="جۆری بابەت" />
+        <input type="text" class="form-control filter-input  " disabled  wire:keydown="changeFilter" wire:model="subjectType" placeholder="جۆری بابەت" />
     </div>
     <div class="row  my-1 p-0 align-items-center">
         <div class="col">
-{{--            <label class="rebar form-label" >بەرواری دەستپێک</label>--}}
-            <input type="date"  class="form-control filter-input  " wire:model="startDate" wire:change="changeFilter" placeholder="بەرواری دەستپێک" />
+             <input type="date"  class="form-control filter-input  " wire:model="startDate" wire:change="changeFilter" placeholder="بەرواری دەستپێک" />
         </div>
              <span style="display: contents;">:</span>
-
         <div class="col">
-{{--            <label class="rebar form-label" >بەرواری کۆتایی</label>--}}
-            <input type="date"  class="form-control filter-input " wire:model="endDate" wire:change="changeFilter" placeholder="بەرواری کۆتایی" />
+             <input type="date"  class="form-control filter-input " wire:model="endDate" wire:change="changeFilter" placeholder="بەرواری کۆتایی" />
         </div>
     </div>
 </div>

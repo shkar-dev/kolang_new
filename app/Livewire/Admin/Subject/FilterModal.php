@@ -33,7 +33,6 @@ class FilterModal extends Component
 
     }
     public function changeFilter(){
-
         $this->dispatch('change-filter',$this->subjectId,$this->subject,$this->subjectType,$this->author,$this->startDate,$this->endDate,$this->translator);
     }
     public function render()
