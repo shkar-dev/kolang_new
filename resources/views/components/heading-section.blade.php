@@ -24,7 +24,8 @@
         <button class="sort-button" type="button" id="filter">
             <i class="fa-solid fa-filter"></i>
         </button>
-        <livewire:admin.subject.filter-modal :subjectType="$title" />
+
+        <livewire:admin.subject.filter-modal :subjectType="$title" :isGeneral="$isGeneral"/>
     </div>
 </div>
 <script>

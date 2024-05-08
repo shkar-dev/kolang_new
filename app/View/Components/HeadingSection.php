@@ -12,8 +12,10 @@ class HeadingSection extends Component
      * Create a new component instance.
      */
     public $title;
-    public function __construct($title)
+    public $isGeneral;
+    public function __construct($title,$isGeneral)
     {
+        $this->isGeneral=$isGeneral;
         $this->title = $title;
     }
 

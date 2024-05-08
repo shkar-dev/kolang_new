@@ -1,6 +1,6 @@
 <div class="sidebar-container">
     <div class="iconbar">
-        <div>
+        <div style="position: relative">
             <div class="iconbar-icon">
                 <img src="{{ asset('assets/images/logo-white.png') }}">
             </div>
@@ -33,14 +33,28 @@
                 </div>
                 <p>ڕێکخستن</p>
             </div>
+            <a class="iconbar-icon setting-icon" style="position:absolute;text-decoration:none; bottom:30px; "  href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" >
+                <div>
+                    <i class="fa fa-power-off"></i>
+                </div>
+                <p>دەرچوون</p>
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
         </div>
+
+
     </div>
     <div class="menubar">
         <div>
             <div class="menubar-icons">
-                <div class="menubar-item subject-item">
+                <a class="menubar-item  subject-item {{ str_contains(request()->getPathInfo(), 'general') ? 'menubar-item-active' : '' }}"
+                   href="{{ route('admin.subject.subjectGeneral') }}" wire:navigate>
                     <p>گشتی</p>
-                </div>
+                </a>
                 <a class="menubar-item  subject-item {{ str_contains(request()->getPathInfo(), 'education') ? 'menubar-item-active' : '' }}"
                     href="{{ route('admin.subject.education') }}" wire:navigate>
                     <p>پەروەردە</p>
@@ -62,10 +76,24 @@
                     <p>وتار</p>
                 </a>
 
-                <div class="menubar-item  course-item menubar-item-active">
+                <a class="menubar-item  course-item {{ str_contains(request()->getPathInfo(), 'course') ? 'menubar-item-active' : '' }}"
+                     href="{{ route('admin.course.course') }}" wire:navigate>
                     <p>کۆرس</p>
-                </div>
-
+                </a>
+                <a class="menubar-item  course-item {{ str_contains(request()->getPathInfo(), 'group') ? 'menubar-item-active' : '' }}"
+                   href="{{ route('admin.course.group') }}" wire:navigate>
+                    <p>گروپ</p>
+                </a>
+                <a class="menubar-item  course-item {{ str_contains(request()->getPathInfo(), 'subscribers') ? 'menubar-item-active' : '' }}"
+                   href="{{ route('admin.course.subscribers') }}" wire:navigate>
+                    <p>بەشداربووان</p>
+                </a>
+{{--                <div class="menubar-item  course-item ">--}}
+{{--                    <p>گروپ</p>--}}
+{{--                </div>--}}
+{{--                <div class="menubar-item  course-item  ">--}}
+{{--                    <p>بەشداربوان</p>--}}
+{{--                </div>--}}
                 <div class="menubar-item  people-item ">
                     <p>گشتی</p>
                 </div>

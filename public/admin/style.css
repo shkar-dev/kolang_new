@@ -3,6 +3,9 @@
     src: url('/../assets/fonts/Rabar_013.ttf');
 }
 
+body{
+    overflow-x:hidden;
+}
 /*html{*/
 /*    scroll-behavior: smooth;*/
 /*}*/
@@ -411,7 +414,7 @@ body {
 
 .section {
     overflow-y: auto !important;
-    height: 480px;
+    height: 510px;
 }
 
 .fr-wrapper {
@@ -781,6 +784,18 @@ input[type=file]::file-selector-button:hover {
     position: absolute;
     bottom: 50px;
     left: 50px;
+}
+.normal-button {
+    padding: 12px 30px;
+    background: rgba(53, 97, 103, 0.88);
+    border-radius: 3px;
+    color: white;
+    font-family: Speda;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    border: none;
 
 }
 
@@ -794,3 +809,42 @@ input[type=file]::file-selector-button:hover {
     color: white !important;
     font-family: Speda;
 }
+.documents-list-item{
+    padding: 8px 5px ;
+    margin: 5px 0px;
+    background: #f0f0f0;
+    position: relative;
+}
+.document-delete-icon{
+    position: absolute;
+    left: 20px;
+    top:5px;
+}
+.card {
+    position: relative;
+}
+.card-delete-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /*background: #023941;*/
+    position: absolute;
+    left: 20px;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.document-dialog-image-container{
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.document-modal{
+    --bs-modal-width: 350px;
+}
+.modal-backdrop {
+    opacity: 0.1!important;
+}
+
+

@@ -19,8 +19,8 @@ class InputText extends Component
     public function __construct(
         $name,
         $title,
-        $type,
-        $isValid
+        $type='text',
+        $isValid=false
     ) {
         $this->name = $name;
         $this->type = $type;

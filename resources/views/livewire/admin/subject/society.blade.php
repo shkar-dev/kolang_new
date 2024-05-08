@@ -1,5 +1,5 @@
 <div>
-    <x-heading-section title="کۆمەڵگە" />
+    <x-heading-section title="کۆمەڵگە" isGeneral="false" />
     <div class="admin-search-container">
         <div class="admin-search-input-container">
             <i class="fa fa-search"></i>

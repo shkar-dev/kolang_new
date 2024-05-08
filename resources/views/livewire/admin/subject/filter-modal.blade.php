@@ -17,7 +17,11 @@
         <input type="text" class="form-control filter-input    " wire:keydown="changeFilter" wire:model="translator" placeholder="وەرگێڕ" />
     </div>
     <div class="row  my-1">
-        <input type="text" class="form-control filter-input  " disabled  wire:keydown="changeFilter" wire:model="subjectType" placeholder="جۆری بابەت" />
+        @if($this->isGeneral == 'true')
+            <input type="text" class="form-control filter-input  "    wire:keydown="changeFilter"   placeholder="جۆری بابەت" />
+        @else
+            <input type="text" class="form-control filter-input  " disabled  wire:keydown="changeFilter" wire:model="subjectType" placeholder="جۆری بابەت" />
+        @endif
     </div>
     <div class="row  my-1 p-0 align-items-center">
         <div class="col">

@@ -8,6 +8,7 @@ use PhpParser\Node\Expr\Cast\Object_;
 
 class FilterModal extends Component
 {
+    public $isGeneral;
     public  $filter ;
     public  $subjectId;
     public  $subject;
@@ -33,7 +34,7 @@ class FilterModal extends Component
 
     }
     public function changeFilter(){
-        $this->dispatch('change-filter',$this->subjectId,$this->subject,$this->subjectType,$this->author,$this->startDate,$this->endDate,$this->translator);
+        $this->dispatch('~change-filter',$this->subjectId,$this->subject,$this->subjectType,$this->author,$this->startDate,$this->endDate,$this->translator);
     }
     public function render()
     {

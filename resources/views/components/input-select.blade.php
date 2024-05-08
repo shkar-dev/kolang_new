@@ -1,22 +1,13 @@
 <div class="row p-3">
-    <select class="js-example-basic-single col-md-11" id="{{ $title }}" name="state"
-        placeholder="{{ $title }}">
+{{--    p-3--}}
+    <select class="js-example-basic-single col-11" id="{{ $title }}" name="state"
+        placeholder="{{ $title }}" style="width:100% !important;">
         <option>aa</option>
         <option value="WY">Wyoming</option>
         <option value="WY">Wyoming</option>
         <option value="WY">Wyoming</option>
-        <option value="WY">Wyoming</option>
-        <option value="WY">Wyoming</option>
-        <option value="WY">Wyoming</option>
-        <option value="WY">Wyoming</option>
-        <option value="WY">Wyoming</option>
-        <option value="WY">Wyoming</option>
-        <option value="WY">Wyoming</option>
-        <option value="WY">Wyoming</option>
-        <option value="WY">Wyoming</option>
-        <option value="WY">Wyoming</option>
-        <option value="WY">Wyoming</option>
-        <option value="WY">Wyoming</option>
+
+
     </select>
     <style>
         /* .select2-selection__arrow {

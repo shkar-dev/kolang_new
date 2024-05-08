@@ -33,19 +33,19 @@
         </div>
     </div>
 
+
     <div class=" justify-content-around px-3  py-4 d-flex ">
         <div class="col-6 px-4 pt-2 pb-5 document-sides ">
-
-            <div class="row " >
-                <div class=" col ">
-                    <div class="form-floating ">
-                        <input type="email" class="form-control custom-input form-control-sm" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">بابەت</label>
+            <form action="{{route('admin.setting.documents.store')}}" method="post" >
+                @csrf
+                 <div class="row " >
+                    <div class=" col ">
+                        <x-input-text name="name" title="بەڵگەنامە"/>
                     </div>
                 </div>
-            </div>
-            <buton class="custom-button">  زیادکردن<i class="fa fa-plus mx-1"></i></buton>
-{{--            <div class="row">--}}
+                <button type="submit" class="custom-button"  >  زیادکردن<i class="fa fa-plus mx-1"></i></button>
+            </form>
+ {{--            <div class="row">--}}
 {{--                <button class="btn btn-secondary">زیادکردن</button>--}}
 {{--            </div>--}}
         </div>
@@ -53,13 +53,25 @@
             <div class=" row justify-content-between align-items-center d-flex " >
                 <div class="col-12 pb-3 pt-0">
                     <div class="form-floating ">
-                        <input type="email" class="form-control custom-input form-control-sm" id="floatingInput" placeholder="name@example.com">
+                        <input type="text" class="form-control custom-input form-control-sm" id="floatingInput" placeholder="name@example.com" wire:model="search_input" wire:keydown="search">
                         <label for="floatingInput">گەڕان</label>
                     </div>
                 </div>
-
-
             </div>
+
+            @foreach($documents as $index => $item)
+                <div class="documents-list-item ">
+                    {{++$index}} - {{$item->name}}
+                    <form action="{{route('admin.setting.documents.destroy',$item)}}" method="post" >
+                        @csrf
+                        @method('Delete')
+{{--                        <input type="hidden" value="{{$item->id}}" name="id">--}}
+                        <button type="submit" class="document-delete-icon btn btn-sm btn-light" ><i class="fa fa-trash-can "></i></button>
+                    </form>
+                </div>
+            @endforeach
         </div>
+
     </div>
+
 </div>
