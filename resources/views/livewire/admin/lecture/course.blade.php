@@ -1,7 +1,4 @@
 
-
-
-
 <div class="px-3 py-2  bg-white   h-100">
     <div class="content-list-buttons" style="background: #023941d4;border-radius:5px;box-shadow: 0 0px 10px #e0e0e0">
         <div class=" list-title">
@@ -17,7 +14,7 @@
                 </div>
                 <div class="row ">
                     <div class=" col ">
-                        <x-input-select title="وانەبێژ" />
+                        <x-input-select title="وانەبێژ" name="a" />
                     </div>
                     <div class=" col ">
                         <x-input-text   name='course_duration' title='ماوەی کۆرس' type='text' isValid='true'/>

@@ -21,7 +21,7 @@
 {{--                        </select>--}}
                         <div class="row p-0">
                             <div class=" col-12 ">
-                                <x-input-select title="بابەت٢٢" />
+                                <x-input-select title="بابەت٢٢" name="aa" />
                             </div>
                         </div>
 

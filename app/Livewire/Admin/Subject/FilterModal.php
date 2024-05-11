@@ -17,24 +17,19 @@ class FilterModal extends Component
     public  $endDate ;
     public  $author ;
     public  $translator  ;
-
-    public function mount(){
-
-    }
     public function clear(){
         $this->subjectId="";
         $this->subject="";
-        $this->subjectType="";
         $this->startDate="";
         $this->endDate="";
         $this->author="";
         $this->translator="";
         $this->startDate="";
         $this->endDate="";
-
+        $this->changeFilter();
     }
     public function changeFilter(){
-        $this->dispatch('~change-filter',$this->subjectId,$this->subject,$this->subjectType,$this->author,$this->startDate,$this->endDate,$this->translator);
+        $this->dispatch('change-filter',$this->subjectId,$this->subject,$this->subjectType,$this->author,$this->startDate,$this->endDate,$this->translator);
     }
     public function render()
     {

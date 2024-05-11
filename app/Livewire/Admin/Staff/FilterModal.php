@@ -18,19 +18,17 @@ class FilterModal extends Component
     public  $phone2;
     public  $phone3;
 
-    public function mount(){
-     }
+
     public function clear(){
         $this->staffId="";
         $this->name="";
         $this->dateOfBirth="";
         $this->gender="";
         $this->educationLevel="";
-        $this->staffType="";
         $this->phone1="";
         $this->phone2="";
         $this->phone3="";
-
+        $this->changeFilter();
     }
     public function changeFilter(){
         $this->dispatch('change-staff-filter',$this->staffId,$this->name,$this->dateOfBirth,$this->gender,$this->educationLevel,$this->staffType,$this->phone1,$this->phone2,$this->phone3);

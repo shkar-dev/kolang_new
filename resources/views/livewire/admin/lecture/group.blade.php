@@ -26,10 +26,10 @@
                 </div>
                 <div class="row ">
                     <div class=" col ">
-                        <x-input-select title="کۆرس" />
+                        <x-input-select title="کۆرس" name="aa" />
                     </div>
                     <div class=" col ">
-                        <x-input-select title="بەشداربوان" />
+                        <x-input-select title="بەشداربوان"  name="aa"/>
                     </div>
                 </div>
             </div>

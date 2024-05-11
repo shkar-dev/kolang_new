@@ -12,7 +12,7 @@ class Education extends Component
     public $users = [];
     #[On('change-filter')]
     public function filterUsers($subjectId,$subject, $subjectType, $author, $startDate, $endDate, $translator){
-        $this->users =  $this->AdminModalFilter($subjectId,$subject, $subjectType, $author, $startDate, $endDate, $translator,$this->users);
+         $this->users =  $this->AdminModalFilter($subjectId,$subject, $subjectType, $author, $startDate, $endDate, $translator,$this->users);
     }
     public function boot(){
         $this->users = [
@@ -29,7 +29,7 @@ class Education extends Component
             ['id' => 11,'subject' => 'babat2', 'nusar' => 'sirwan', 'warger' => 'warger2', 'type' => 'فێربوون','start_date'=>'2024-01-10','end_date'=>'2024-01-20'],
             ['id' => 12,'subject' => 'babat1', 'nusar' => 'hardy',  'warger' => 'warger4', 'type' => 'فێربوون','start_date'=>'2024-01-10','end_date'=>'2024-01-20'],
         ];
-
+        $this->filterUsers('','','پەروەردە','','','','');
      }
     public function render()
     {

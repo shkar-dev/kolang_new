@@ -9,47 +9,50 @@
     </div>
     <div class="row p-3">
         <ul class="nav nav-tabs custom-add-subject-tab">
-            <li class="nav-item">
-                <a href="#home" class="nav-link active" data-bs-toggle="tab">زانیاریەکان</a>
+            <li class="nav-item ">
+                <a href="#home" class="nav-link active tab-items" data-bs-toggle="tab"> <i class="fa fa-file-lines mx-2" ></i> زانیاریەکان </a>
             </li>
-            <li class="nav-item">
-                <a href="#profile" class="nav-link" data-bs-toggle="tab">نووسین</a>
+            <li class="nav-item tab-items">
+                <a href="#profile" class="nav-link tab-items" data-bs-toggle="tab">  <i class="fa fa-pen-nib mx-2" ></i>نووسین </a>
             </li>
         </ul>
-        <div class="tab-content">
+        <div class="tab-content ">
             <div class="tab-pane fade show active" id="home">
                 <div class="section  custom-row pt-2  px-5    justify-content-between" style="padding-bottom: 60px;">
-                    <div class="row ">
-                        <div class=" col ">
-                            <x-input-text name='subject' title='بابەت' type='text' isValid='true' />
-                        </div>
+                    <form class="needs-validation"  data-toggle="validator">
                         <div class="row ">
                             <div class=" col ">
-                                <x-input-select title="بابەت" />
+                                <x-input-text name='subject' title='بابەت' type='text' isValid='true' />
+                            </div>
+                            <div class="row ">
+                                <div class=" col ">
+                                    <x-input-select title="بابەت" name="aa" />
 
+                                </div>
+                                <div class=" col ">
+                                    <x-input-select title="بابەت٢" name="aa"/>
+                                </div>
                             </div>
-                            <div class=" col ">
-                                <x-input-select title="بابەت٢" />
+                            <div class="row ">
+                                <div class=" col ">
+                                    <x-input-select title="بابەت٢٢" name="aa"/>
+                                </div>
+                                <div class="
+                                        col ">
+                                    {{-- <x-input-text name='start_date' title='بەرواری دەستپێک' type='date' isValid='true' /> --}}
+                                    <x-input-date name='date' title='ڕێکەوت' />
+                                </div>
                             </div>
-                        </div>
-                        <div class="row ">
-                            <div class=" col ">
-                                <x-input-select title="بابەت٢٢" />
-                            </div>
-                            <div class="
-                                    col ">
-                                {{-- <x-input-text name='start_date' title='بەرواری دەستپێک' type='date' isValid='true' /> --}}
-                                <x-input-date name='date' title='ڕێکەوت' />
-                            </div>
-                        </div>
-                        <div class="row ">
-                            <div class=" col ">
-                                <div class="form-floating ">
-                                    <x-input-text-area name='note' title='تێبینی ' type='text' isValid='true' />
+                            <div class="row ">
+                                <div class=" col ">
+                                    <div class="form-floating ">
+                                        <x-input-text-area name='note' title='تێبینی ' type='text' isValid='true' />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <x-submit-button type="submit" class="btn btn-primary" text="welcome" />
+                    </form>
                 </div>
             </div>
             <div class="tab-pane fade" id="profile">

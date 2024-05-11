@@ -11,10 +11,12 @@
 {{--        <x-tab-section :tabs="$tab"/>--}}
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">زیادکردنی ستاف</button>
+
+
+                <button class="nav-link active tab-items" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><i class="fa fa-user-plus mx-2" ></i> زیادکردنی ستاف </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">بەڵگەنامەکان</button>
+                <button class="nav-link tab-items" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><i class="fa fa-id-card-clip mx-2" ></i>بەڵگەنامەکان </button>
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">

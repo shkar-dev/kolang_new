@@ -11,7 +11,7 @@
                         subject
                     </span>
                 </div>
-                <p>بابەت</p>
+                <p >بابەت</p>
             </div>
             <div class="iconbar-icon course-icon course-icon  ">
                 <div>

@@ -15,7 +15,7 @@
                 </div>
                 <div class="row ">
                     <div class=" col ">
-                        <x-input-select title="گروپ" />
+                        <x-input-select title="گروپ" name="a" />
                     </div>
                     <div class=" col ">
                         <x-input-text name='subject' title='ڕەگەز' type='text' isValid='true' />

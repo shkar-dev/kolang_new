@@ -7,5 +7,4 @@
         </div>
     </div>
     <x-admin-list-tile :users=" $users "/>
-
 </div>

@@ -1,6 +1,6 @@
 <div class="row p-3">
 {{--    p-3--}}
-    <select class="js-example-basic-single col-11" id="{{ $title }}" name="state"
+    <select class="js-example-basic-single col-11   " id="{{ $title }}" name="{{$name}}"
         placeholder="{{ $title }}" style="width:100% !important;">
         <option>aa</option>
         <option value="WY">Wyoming</option>
@@ -9,6 +9,7 @@
 
 
     </select>
+    <div class="row"><p class="input-invalid-text">تکایە ناو تۆمار بکە </p></div>
     <style>
         /* .select2-selection__arrow {
             left: 2% !important;
@@ -36,7 +37,12 @@
             border: none !important;
             border-bottom: 1px solid #e0e0e0 !important;
             border-radius: 0px !important;
+            height: 42px !important;
         }
+
+        .select2-selection {
+            border-bottom: 1px solid red !important;
+         }
 
         .skills_select2 {
             width: 120px !important;
