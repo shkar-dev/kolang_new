@@ -49,6 +49,8 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
 //    sraff
     Route::get('/staff/writer', \App\Livewire\Admin\Staff\Staff::class)->name('admin.staff.writer');
+    Route::get('/staff/translator', \App\Livewire\Admin\Staff\Translator::class)->name('admin.staff.translator');
+    Route::get('/staff/lecturer', \App\Livewire\Admin\Staff\Lecturer::class)->name('admin.staff.lecturer');
     Route::get('/staff/add-writer', \App\Livewire\Admin\Staff\AddStaff::class)->name('admin.staff.add-writer');
     Route::get('test2', function () {
         return "welcmoe0";

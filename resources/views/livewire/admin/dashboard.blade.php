@@ -13,14 +13,14 @@
                 </div>
                 <p >بابەت</p>
             </div>
-            <div class="iconbar-icon course-icon course-icon  ">
+            <div class="iconbar-icon course-icon course-icon {{ preg_match('(course|group|subscribers)', request()->getPathInfo()) ? ' icon-bar-active-rtl' : '' }} ">
                 <div>
                     <i class="fa-solid fa-video"></i>
                 </div>
                 <p>وانە</p>
             </div>
             <div
-                class="iconbar-icon people-icon people-icon {{ preg_match('(writer|writer1)', request()->getPathInfo()) ? ' icon-bar-active-rtl' : '' }}">
+                class="iconbar-icon people-icon people-icon {{ preg_match('(writer|translator|lecturer)', request()->getPathInfo()) ? ' icon-bar-active-rtl' : '' }}">
                 <div>
                     <i class="fa-solid fa-user-group"></i>
                 </div>
@@ -101,12 +101,15 @@
                     href="{{ route('admin.staff.writer') }}" wire:navigate>
                     <p>نووسەر</p>
                 </a>
-                <div class="menubar-item  people-item ">
+                <a class="menubar-item  people-item {{ str_contains(request()->getPathInfo(), 'translator') ? 'menubar-item-active' : '' }}"
+                   href="{{ route('admin.staff.translator') }}" wire:navigate>
                     <p>وەرگێڕ</p>
-                </div>
-                <div class="menubar-item  people-item ">
+                </a>
+                <a class="menubar-item  people-item {{ str_contains(request()->getPathInfo(), 'lecturer') ? 'menubar-item-active' : '' }}"
+                   href="{{ route('admin.staff.lecturer') }}" wire:navigate>
                     <p>وانەبێژ</p>
-                </div>
+                </a>
+
 
                 <div class="menubar-item  setting-item ">
                     <p>بەکارهێنەر</p>

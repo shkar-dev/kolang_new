@@ -1,6 +1,6 @@
 <div class="content-list-buttons">
     <div class="list-button-item list-title">
-        <h3>ستاف</h3>
+        <h3>{{$title}}</h3>
     </div>
 
     <div class="list-button-item">
