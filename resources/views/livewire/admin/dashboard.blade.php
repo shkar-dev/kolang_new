@@ -77,15 +77,15 @@
                 </a>
 
                 <a class="menubar-item  course-item {{ str_contains(request()->getPathInfo(), 'course') ? 'menubar-item-active' : '' }}"
-                     href="{{ route('admin.course.course') }}" wire:navigate>
+                     href="{{ route('admin.course.course-list') }}" wire:navigate>
                     <p>کۆرس</p>
                 </a>
                 <a class="menubar-item  course-item {{ str_contains(request()->getPathInfo(), 'group') ? 'menubar-item-active' : '' }}"
-                   href="{{ route('admin.course.group') }}" wire:navigate>
+                   href="{{ route('admin.course.group-list') }}" wire:navigate>
                     <p>گروپ</p>
                 </a>
                 <a class="menubar-item  course-item {{ str_contains(request()->getPathInfo(), 'subscribers') ? 'menubar-item-active' : '' }}"
-                   href="{{ route('admin.course.subscribers') }}" wire:navigate>
+                   href="{{ route('admin.course.subscriber-list') }}" wire:navigate>
                     <p>بەشداربووان</p>
                 </a>
 {{--                <div class="menubar-item  course-item ">--}}

@@ -1,6 +1,9 @@
 <div class="row p-3">
 {{--    p-3--}}
-    <select class="js-example-basic-single col-11   " id="{{ $title }}" name="{{$name}}"
+    <?php
+        $id = rand(1,20);
+    ?>
+    <select class="js-example-basic-single col-11 {{$title}}" id="{{$id}}"  name="{{$name}}"
         placeholder="{{ $title }}" style="width:100% !important;">
         <option>aa</option>
         <option value="WY">Wyoming</option>
@@ -43,15 +46,13 @@
         .select2-selection {
             border-bottom: 1px solid red !important;
          }
-
         .skills_select2 {
             width: 120px !important;
         }
     </style>
-
     <script>
         $(document).ready(function() {
-            $('#' + "{{ $title }}").select2({
+            $('#' + "{{ $id }}").select2({
                 placeholder: {
                     id: 'aa', // the value of the option
                     text: "{{ $title }}"
@@ -63,10 +64,8 @@
                     if (data.id === 'aa') { // adjust for custom placeholder values
                         return "{{ $title }}";
                     }
-
                     return data.text;
                 }
-
             });
         });
     </script>

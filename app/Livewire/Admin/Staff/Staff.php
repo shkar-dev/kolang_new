@@ -9,7 +9,6 @@ use Livewire\Component;
 class Staff extends Component
 {
     public $staff=[];
-
     #[On('change-staff-filter')]
     public function addUsers($staffId,$name, $dateOfBirth, $gender, $educationLevel, $staffType, $phone1, $phone2,$phone3)
     {

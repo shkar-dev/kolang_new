@@ -25,7 +25,9 @@ Route::get('/morality', \App\Livewire\User\Education::class)->name('morality');
 Route::get('/courses', \App\Livewire\User\Education::class)->name('courses');
 Route::get('/articles', \App\Livewire\User\Education::class)->name('articles');
 Route::get('/videos', \App\Livewire\User\Education::class)->name('videos');
-
+Route::get('/userlogin',function (){
+    return view('auth.user.login');
+});
 
 
 Route::middleware('auth')->prefix('admin')->group(function () {
@@ -46,6 +48,9 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/lecture/course',\App\Livewire\Admin\Lecture\Course::class)->name('admin.course.course');
     Route::get('/lecture/group',\App\Livewire\Admin\Lecture\Group::class)->name('admin.course.group');
     Route::get('/lecture/subscribers',\App\Livewire\Admin\Lecture\Subscribers::class)->name('admin.course.subscribers');
+    Route::get('/lecture/course-list',\App\Livewire\Admin\Lecture\CourseList::class)->name('admin.course.course-list');
+    Route::get('/lecture/group-list',\App\Livewire\Admin\Lecture\GroupList::class)->name('admin.course.group-list');
+    Route::get('/lecture/subscriber-list',\App\Livewire\Admin\Lecture\SubscriberList::class)->name('admin.course.subscriber-list');
 
 //    sraff
     Route::get('/staff/writer', \App\Livewire\Admin\Staff\Staff::class)->name('admin.staff.writer');

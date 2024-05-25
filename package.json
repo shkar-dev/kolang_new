@@ -17,6 +17,7 @@
         "filepond": "^4.31.1",
         "filepond-plugin-image-preview": "^4.6.12",
         "froala-editor": "^4.2.0",
-        "fullpage.js": "^4.0.22"
+        "fullpage.js": "^4.0.22",
+        "jsuites": "^5.4.3"
     }
 }
