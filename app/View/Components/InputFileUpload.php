@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class subscriber-item extends Component
+class InputFileUpload extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class subscriber-item extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.subscriber-item');
+        return view('components.input-file-upload');
     }
 }

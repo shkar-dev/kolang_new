@@ -101,33 +101,26 @@
         </div>
             </div>
             <div class="tab-pane fade    " id="transaction">
-                <div class="row p-2  group-lectures-container " >
-                    <div  >
-                        <button class="normal-button"  type="button"  data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop">زیادکردنی وانە</button>
-                    </div>
+                <div  class="p-3 ">
+                    <button class="normal-button"  type="button"  data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">زیادکردنی مامەڵەی دارایی</button>
+                </div>
+                <div class="row p-1  group-lectures-container " >
                     <ul>
                         <li>
-                            <div class="  p-0">
-                                <h4> <i class="fa fa-book mx-2" > </i>group 1    </h4>
-                                <i  style="width: fit-content;" type="button"  data-bs-toggle="modal"
-                                    data-bs-target="#staticBackdrop1" class="fa fa-plus icon-button"></i>
-                            </div>
                             <ul>
-                                <li class="sub-lecture">
-                                    <div class="  p-0">
-                                        <h4 > <i class="fa fa-book mx-2" > </i>group -1 transaction1   </h4>
-                                        <i style="width: fit-content; " type="button" data-bs-toggle="modal"
-                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button"></i>
-                                    </div>
-                                </li>
-                                <li class="sub-lecture">
-                                    <div class="  p-0">
-                                        <h4 > <i class="fa fa-book mx-2" > </i>group -1 transaction2 </h4>
-                                        <i style="width: fit-content; " type="button" data-bs-toggle="modal"
-                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button"></i>
-                                    </div>
-                                </li>
+                                <?php
+                                $count = [1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2];
+                                ?>
+                                @foreach($count as $item)
+                                    <li class="sub-lecture">
+                                        <div class="  p-0">
+                                            <h4 > <i class="fa fa-book mx-2" > </i>group -1 transaction1   </h4>
+                                            <i style="width: fit-content; " type="button" data-bs-toggle="modal"
+                                               data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button"></i>
+                                        </div>
+                                    </li>
+                                @endforeach
                             </ul>
                         </li>
                     </ul>

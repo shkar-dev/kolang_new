@@ -32,11 +32,11 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" />
         <link rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.rtl.min.css" />
-        <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
-        <link
-            href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
-            rel="stylesheet"
-        />
+{{--        <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">--}}
+{{--        <link--}}
+{{--            href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"--}}
+{{--            rel="stylesheet"--}}
+{{--        />--}}
         <style>
             .material-symbols-outlined {
                 font-variation-settings:
@@ -73,8 +73,8 @@
                 $(this).addClass(' menubar-item-active');
             })
         </script>
-        <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
-        <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+{{--        <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>--}}
+{{--        <script src="https://unpkg.com/filepond/dist/filepond.js"></script>--}}
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
@@ -95,11 +95,12 @@
         {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script> --}}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
-        <script>
-            FilePond.registerPlugin(FilePondPluginImagePreview);
-            const inputElement = document.querySelector('input[type="file"]');
-            // Create the FilePond instance
-            const pond = FilePond.create(inputElement);
-        </script>
+{{--        <script>--}}
+{{--            FilePond.registerPlugin(FilePondPluginImagePreview);--}}
+{{--            const inputElement = document.querySelector('input[type="file"]');--}}
+{{--            // Create the FilePond instance--}}
+{{--            const pond = FilePond.create(inputElement);--}}
+{{--        </script>--}}
+
     </body>
 </html>

@@ -1,4 +1,4 @@
-<div class="col-4 p-2 ">
+<div class="{{$class}} p-2 ">
     <div class="   subscribers-item-container">
         <div class="subscriber-item-img " style="background-image: url('{{asset("assets/images/person.jpg")}}')" ></div>
         <p> شکار شهاب باقر </p>
@@ -6,10 +6,10 @@
             <input class="" type="checkbox" />
         </div>
     </div>
-<script>
+    <script>
 
-    $('.subscribers-item-container').on('click',function (){
+        $('.subscribers-item-container').on('click',function (){
 
-    })
-</script>
+        })
+    </script>
 </div>
