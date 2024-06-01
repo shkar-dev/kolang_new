@@ -10,9 +10,16 @@
         </button>
     </div>
     <div class="list-button-item">
-        <a href="{{route('admin.staff.add-writer')}}" class="sort-button" id="add-btn"   wire:navigate>
-            <i class="fa fa-plus"></i>
-        </a>
+
+        @if($title == 'وانەبێژ')
+            <a href="{{route('admin.staff.add-lecturer')}}" class="sort-button" id="add-btn"   wire:navigate>
+                <i class="fa fa-plus"></i>
+            </a>
+        @else
+            <a href="{{route('admin.staff.add-writer')}}" class="sort-button" id="add-btn"   wire:navigate>
+                <i class="fa fa-plus"></i>
+            </a>
+        @endif
     </div>
     <div class="list-button-item">
         <button class="sort-button" type="button"    id="filter">

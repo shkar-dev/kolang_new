@@ -5,7 +5,7 @@
                 <img src="{{ asset('assets/images/logo-white.png') }}">
             </div>
             <div
-                class="iconbar-icon subject-icon {{ preg_match('(learning|education|society|ethics|article)', request()->getPathInfo()) ? ' icon-bar-active-rtl' : '' }}">
+                class="iconbar-icon subject-icon {{ preg_match('(learning|education|society|ethics|article|add-subject|general)', request()->getPathInfo()) ? ' icon-bar-active-rtl' : '' }}">
                 <div>
                     <span class="material-symbols-outlined">
                         subject
@@ -13,7 +13,7 @@
                 </div>
                 <p >بابەت</p>
             </div>
-            <div class="iconbar-icon course-icon course-icon {{ preg_match('(course|group|subscribers)', request()->getPathInfo()) ? ' icon-bar-active-rtl' : '' }} ">
+            <div class="iconbar-icon course-icon course-icon {{ preg_match('(course|group|subscriber)', request()->getPathInfo()) ? ' icon-bar-active-rtl' : '' }} ">
                 <div>
                     <i class="fa-solid fa-video"></i>
                 </div>
@@ -84,7 +84,7 @@
                    href="{{ route('admin.course.group-list') }}" wire:navigate>
                     <p>گروپ</p>
                 </a>
-                <a class="menubar-item  course-item {{ str_contains(request()->getPathInfo(), 'subscribers') ? 'menubar-item-active' : '' }}"
+                <a class="menubar-item  course-item {{ str_contains(request()->getPathInfo(), 'subscriber') ? 'menubar-item-active' : '' }}"
                    href="{{ route('admin.course.subscriber-list') }}" wire:navigate>
                     <p>بەشداربووان</p>
                 </a>

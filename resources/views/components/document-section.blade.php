@@ -13,18 +13,11 @@
                         <input type="file" class="filepond">
                     </div>
                     <div class="row justify-content-center p-3">
-{{--                        <select class="form-control py-2">--}}
-{{--                            <option value="" selected disabled>بەڵگەنامە دیاریبکە</option>--}}
-{{--                            <option value="">select1</option>--}}
-{{--                            <option value="">select2</option>--}}
-{{--                            <option value="">select3</option>--}}
-{{--                        </select>--}}
                         <div class="row p-0">
                             <div class=" col-12 ">
                                 <x-input-select title="بابەت٢٢" name="aa" />
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div class="modal-footer">
