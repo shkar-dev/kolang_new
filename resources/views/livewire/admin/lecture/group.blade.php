@@ -167,42 +167,42 @@
                 <div class="row p-2 group-lectures-container" >
                     <div class="row">
                         <button class="normal-button"  type="button"
-                                data-bs-target="#staticBackdrop">زیادکردنی وانە</button>
+                                data-bs-target="#staticBackdrop" data-bs-toggle="modal"  >زیادکردنی وانە</button>
                     </div>
                     <ul >
                         <li>
                             <div class="  p-0">
                                 <h4> <i class="fa fa-book mx-2" > </i>وانەی یەکەم   </h4>
                                 <i  style="width: fit-content;" type="button"
-                                       data-bs-target="#staticBackdrop1" class="fa fa-plus icon-button"></i>
+                                       data-bs-target="#staticBackdrop1" class="fa fa-plus icon-button" data-bs-toggle="modal"  ></i>
                             </div>
                             <ul id='draggable-elements' class='cursor'>
                                 <li class="sub-lecture">
                                     <div class="  p-0">
                                         <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم 1  </h4>
                                         <i style="width: fit-content; " type="button"
-                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button"></i>
+                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  ></i>
                                     </div>
                                 </li>
                                 <li class="sub-lecture">
                                     <div class="  p-0">
                                         <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم   2</h4>
                                         <i style="width: fit-content; " type="button"
-                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button"></i>
+                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  > </i>
                                     </div>
                                 </li>
                                 <li class="sub-lecture">
                                     <div class="  p-0">
                                         <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم3   </h4>
                                         <i style="width: fit-content; " type="button"
-                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button"></i>
+                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  ></i>
                                     </div>
                                 </li>
                                 <li class="sub-lecture">
                                     <div class="  p-0">
                                         <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم4   </h4>
                                         <i style="width: fit-content; " type="button"
-                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button"></i>
+                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  ></i>
                                     </div>
                                 </li>
                             </ul>

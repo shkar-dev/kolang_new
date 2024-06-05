@@ -33,6 +33,7 @@ Route::get('/userlogin',function (){
 Route::middleware('auth')->prefix('admin')->group(function () {
 //    Route::get('/home', \App\Livewire\Admin\Dashboard::class);
 //    subject
+
     Route::get('/subject/general', \App\Livewire\Admin\Subject\SubjectGeneral::class)->name('admin.subject.subjectGeneral');
     Route::get('/subject/education', \App\Livewire\Admin\Subject\Education::class)->name('admin.subject.education');
     Route::get('/subject/learning', \App\Livewire\Admin\Subject\Learning::class)->name('admin.subject.learning');

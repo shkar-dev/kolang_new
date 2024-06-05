@@ -1088,3 +1088,10 @@ input[type=file]::file-selector-button:hover {
     height:300px;
     overflow-y: auto;
 }
+
+
+.user-login-logo {
+    width : 50px ;
+    height: 50px;
+
+}

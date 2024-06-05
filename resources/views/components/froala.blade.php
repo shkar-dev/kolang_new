@@ -1,28 +1,25 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/css/froala_editor.pkgd.min.css" rel="stylesheet">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/css/plugins.pkgd.min.css"  >
-@php
-    $data = \App\Models\FroalaUploadImage::findOrFail(1)
-@endphp
+{{--@php--}}
+{{--    $data = \App\Models\FroalaUploadImage::findOrFail(1)--}}
+{{--@endphp--}}
 <div class=" section custom-row p-4 px-3 justify-content-between">
     <form action="{{route('admin.upload.store')}}" method="post" enctype="multipart/form-data">
         @csrf
-        <textarea id="editor" name="content"  > {{ $data->description}}</textarea>
+        <textarea id="editor" name="content"  >
+        </textarea>
         <button class="btn btn-primary" type="submit"> submit</button>
     </form>
-
      <div class="fr-view" >
-
-              {!!  $data->description !!}
-
+{{--              {!!  $data->description !!}--}}
      </div>
 </div>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/js/froala_editor.pkgd.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/js/plugins.pkgd.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/js/plugins.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/js/froala_editor.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/js/plugins.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/js/plugins.pkgd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/js/plugins/draggable.min.js" integrity="sha512-oZWzzLCVhvygrg4lsvFA6sQD5PSEyHUpyH59tShihPR9LDF6LDvQ04/kM+HmDRw4o4MlRYExQty+UiA3zLgQEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/js/plugins/image.min.js" integrity="sha512-v6VKahjXUwDcLprsCaCkPNML5vF506lfXaXwvL+/iBgnzkKiCaKS5qbZBXHtZysa8JNQENum+wFFZxHdkggUQQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/js/plugins/image_manager.min.js" integrity="sha512-mNlORkwB2Xjap0nkuLQ2kO/CX+F4em8h9mSKJ8tOUEdY/931wc1itPIMF38G7Lt6TD+Fu2Jn3c4EFSqeI+3X1A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 <script>
 
     new FroalaEditor('#editor',{

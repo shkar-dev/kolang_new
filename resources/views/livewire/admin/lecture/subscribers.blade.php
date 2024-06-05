@@ -97,6 +97,10 @@
                     </div>
                 </div>
 
+                <div class="row pt-4">
+                    <input type="file" class="filepond"  >
+                </div>
+
             </div>
         </div>
             </div>

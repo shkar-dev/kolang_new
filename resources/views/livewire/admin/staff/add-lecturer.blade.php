@@ -92,9 +92,12 @@
                             <div class="form-floating ">
                     <textarea type="email" rows="6" class="form-control custom-input form-control-sm" id="floatingInput" placeholder="name@example.com" style="height: auto;">
                     </textarea>
-                                <label for="floatingInput">تێبینی</label>
+                    <label for="floatingInput">تێبینی</label>
                             </div>
                         </div>
+                    </div>
+                    <div class="row pt-2">
+                        <input type="file" class="filepond"  >
                     </div>
                 </div>
             </div>

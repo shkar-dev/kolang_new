@@ -87,6 +87,7 @@
                             </div>
                         </div>
                     </div>
+                         <input type="file" class="filepond"  >
 
                 </div>
             </div>

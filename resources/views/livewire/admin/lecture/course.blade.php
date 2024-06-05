@@ -51,6 +51,7 @@
             <li class="nav-item tab-items">
                 <a href="#attachments" class="nav-link tab-items" data-bs-toggle="tab">  <i class="fa fa-paperclip mx-2" ></i>هاوپێچەکان </a>
             </li>
+
         </ul>
 
         <div class="tab-content ">
@@ -61,12 +62,19 @@
                     <x-input-text name='subject' title='بابەت' type='text' isValid='true' />
                 </div>
                 <div class="row ">
-                    <div class=" col ">
-                        <x-input-select title="وانەبێژ" name="a" />
-                    </div>
+
                     <div class=" col ">
                         <x-input-text   name='course_duration' title='ماوەی کۆرس' type='text' isValid='true'/>
                     </div>
+                </div>
+                <div class="row">
+                    <div class=" col ">
+                        <x-input-textarea title="دەربارەی کۆرس" name="a" />
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="file" class="filepond">
+
                 </div>
             </div>
         </div>
@@ -94,6 +102,7 @@
                     @endforeach
                 </div>
             </div>
+        </div>
     </div>
 </div>
 
