@@ -12,8 +12,10 @@
 
 
     </select>
+    @if(1==2)
     <div class="row"><p class="input-invalid-text">تکایە ناو تۆمار بکە </p></div>
-    <style>
+    @endif
+        <style>
         /* .select2-selection__arrow {
             left: 2% !important;
         }
@@ -42,10 +44,12 @@
             border-radius: 0px !important;
             height: 42px !important;
         }
+        @if(1==2)
 
         .select2-selection {
             border-bottom: 1px solid red !important;
          }
+        @endif
         .skills_select2 {
             width: 120px !important;
         }

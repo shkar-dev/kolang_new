@@ -329,6 +329,7 @@ body {
     border-bottom: 1px solid #e0e0e0;
     transition: 0.2s ease;
     text-decoration: none;
+    cursor: pointer !important;
 
 }
 
@@ -1009,14 +1010,17 @@ input[type=file]::file-selector-button:hover {
     font-family: var(--primary-font) !important;
     height:510px;
     overflow-y: auto !important;
-
  }
 .group-lectures-container > ul{
     width:100% !important;
     /*background: #0a53be;*/
     list-style-type: none;
 }
-
+.group-lectures-container > ul > li > ul > li > ul{
+    width:100% !important;
+    /*background: #0a53be;*/
+    list-style-type: none;
+}
 .group-lectures-container > ul > li {
     padding: 15px 10px;
     /*background: lightgray;*/
@@ -1030,7 +1034,30 @@ input[type=file]::file-selector-button:hover {
     background: white;
     border: 1px solid #e0e0e0;
 }
-.group-lectures-container > ul > li  > div > h4 {
+.group-lectures-container > ul > li  > ul > li > ul > li  {
+    padding: 3px  0px;
+
+
+}
+.group-lectures-container > ul > li  > ul > li > ul > li > div {
+    padding: 13px 20px 9px 0px;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    font-size: 16px !important;
+    width: 100%;
+    background: #dfdfdf;
+}
+.group-lectures-container > ul > li  > ul > li > ul > li > div > h4 {
+
+    padding: 13px 20px 9px 0px;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    font-size: 16px !important;
+    width: 100%;
+}
+ .group-lectures-container > ul > li  > div > h4 {
     padding: 13px 20px 9px 0px;
     margin: 0 !important;
     display: flex;
@@ -1093,5 +1120,18 @@ input[type=file]::file-selector-button:hover {
 .user-login-logo {
     width : 50px ;
     height: 50px;
-
 }
+
+.submit-button {
+    background: #023941 !important;
+    font-size: 13px !important;
+    font-family: var(--primary-font);
+    padding:8px 25px;
+}
+.close-button {
+    font-size: 13px !important;
+    font-family: var(--primary-font);
+    padding:8px 25px;
+    background: none !important;
+}
+

@@ -111,16 +111,20 @@
                 </a>
 
 
-                <div class="menubar-item  setting-item ">
+                <a class="menubar-item  setting-item ">
                     <p>بەکارهێنەر</p>
-                </div>
-                <div class="menubar-item  setting-item ">
+                </a>
+                <a class="menubar-item  setting-item ">
                     <p>دەسەڵاتەکان</p>
-                </div>
-                <div class="menubar-item  setting-item {{ str_contains(request()->getPathInfo(), 'documents') ? 'menubar-item-active' : '' }}"
+                </a>
+                <a class="menubar-item  setting-item {{ str_contains(request()->getPathInfo(), 'documents') ? 'menubar-item-active' : '' }}"
                     href="{{ route('admin.setting.document') }}" wire:navigate >
                     <p>بەڵگەنامەکان</p>
-                </div>
+                </a>
+                <a class="menubar-item  setting-item {{ str_contains(request()->getPathInfo(), 'education-level') ? 'menubar-item-active' : '' }}"
+                   href="{{ route('admin.setting.education-level') }}" wire:navigate >
+                    <p>ئاستی زانستی</p>
+                </a>
             </div>
         </div>
     </div>

@@ -7,7 +7,7 @@
         <div class="modal-dialog modal-dialog-centered document-modal">
             <div class="modal-content">
                 <div class="modal-header pt-3 pb-2 " style="border: none !important">
-                    <h5 class="modal-title" id="staticBackdropLabel">کۆرسی ئایتی</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">زیادکردنی وانە</h5>
                     <button type="button" style="font-size: 11px" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body ">
@@ -25,8 +25,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light" style="background: none !important" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" style="background: #023941 !important">submit</button>
+                    <x-close-button  type="button" class="btn btn-light close-button"  text="داخستن"/>
+                    <x-submit-button class="btn btn-primary submit-button" type="submit"   text="زیادکردن" />
                 </div>
             </div>
         </div>
@@ -51,8 +51,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light" style="background: none !important" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" style="background: #023941 !important">submit</button>
+                    <x-close-button  type="button" class="btn btn-light close-button"  text="داخستن"/>
+                    <x-submit-button class="btn btn-primary submit-button" type="submit"   text="زیادکردن" />
                 </div>
             </div>
         </div>
@@ -85,8 +85,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light" style="background: none !important" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" style="background: #023941 !important">submit</button>
+                    <x-close-button  type="button" class="btn btn-light close-button"  text="داخستن"/>
+                    <x-submit-button class="btn btn-primary submit-button" type="submit"   text="زیادکردن" />
                 </div>
             </div>
         </div>
@@ -141,10 +141,10 @@
                                 <x-input-select title="کۆرس" name="aa" />
                             </div>
                         </div>
-                        <div class="row ">
-                            <p>کۆرس بووک </p>
-                            <livewire:admin.components.upload-input />
-                        </div>
+{{--                        <div class="row ">--}}
+{{--                            <p>کۆرس بووک </p>--}}
+{{--                            <livewire:admin.components.upload-input />--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -232,7 +232,6 @@
             </div>
         </div>
     </div>
-
     <script>
         jSuites.sorting(document.getElementById('draggable-elements'), {
             ondrop: function() {
@@ -244,9 +243,7 @@
                 console.log(arguments);
             }
         });
-
     </script>
-
 </div>
 
 

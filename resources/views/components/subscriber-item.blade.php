@@ -3,7 +3,7 @@
         <div class="subscriber-item-img " style="background-image: url('{{asset("assets/images/person.jpg")}}')" ></div>
         <p> شکار شهاب باقر </p>
         <div class="">
-            <input class="" type="checkbox" />
+            <div class="fa fa-close"></div>
         </div>
     </div>
     <script>

@@ -26,10 +26,16 @@
                         </div>
                     </div>
                     <div class="row " >
+{{--                        <div class=" col ">--}}
+{{--                            <div class="form-floating ">--}}
+{{--                                <input type="text" class="form-control custom-input form-control-sm" id="floatingInput" placeholder="name@example.com">--}}
+{{--                                <label for="floatingInput">جۆری ستاف</label>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <div class=" col ">
                             <div class="form-floating ">
-                                <input type="text" class="form-control custom-input form-control-sm" id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput">جۆری ستاف</label>
+                                <input type="email" class="form-control  custom-input form-control-sm" id="floatingInput" placeholder="name@example.com">
+                                <label for="floatingInput">تەلەفوون١</label>
                             </div>
                         </div>
                         <div class=" col ">
@@ -38,14 +44,10 @@
                                 <label for="floatingInput">لەدایکبوون</label>
                             </div>
                         </div>
+
                     </div>
                     <div class="row " >
-                        <div class=" col ">
-                            <div class="form-floating ">
-                                <input type="email" class="form-control  custom-input form-control-sm" id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput">تەلەفوون١</label>
-                            </div>
-                        </div>
+
                         <div class=" col ">
                             <div class="form-floating ">
                                 <input type="email" class="form-control custom-input form-control-sm" id="floatingInput" placeholder="name@example.com">
@@ -97,7 +99,8 @@
                         </div>
                     </div>
                     <div class="row pt-2">
-                        <input type="file" class="filepond"  >
+                        <p class="py-3">زیادکردنی وێنە</p>
+                        <input type="file" class="filepond" accept="image/*"  >
                     </div>
                 </div>
             </div>

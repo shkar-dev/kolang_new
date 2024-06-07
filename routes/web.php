@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Admin\Setting\EducationLevel;
 use App\Livewire\Admin\Subject\Society;
 
 use Illuminate\Http\Request;
@@ -59,9 +60,14 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/staff/translator', \App\Livewire\Admin\Staff\Translator::class)->name('admin.staff.translator');
     Route::get('/staff/lecturer', \App\Livewire\Admin\Staff\Lecturer::class)->name('admin.staff.lecturer');
     Route::get('/staff/add-writer', \App\Livewire\Admin\Staff\AddStaff::class)->name('admin.staff.add-writer');
+
+
+//    setting
     Route::get('test2', function () {
         return "welcmoe0";
     })->name('admin.upload.froala');
+
+    Route::get('/education-level',EducationLevel::class)->name('admin.setting.education-level');
     Route::post('/test33',[\App\Http\Controllers\FroalaUploadImageController::class,'store'])->name('admin.upload.store');
     Route::get('/documents', \App\Livewire\Admin\Setting\Documents::class)->name('admin.setting.document');
     Route::resource('/documents', \App\Http\Controllers\DocumentController::class)->except('index')->names('admin.setting.documents');

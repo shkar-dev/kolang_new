@@ -1,6 +1,4 @@
 <div class="px-3 py-2  bg-white   h-100">
-
-    {{--    transaction modal--}}
     <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered document-modal">
             <div class="modal-content">
@@ -19,14 +17,12 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light" style="background: none !important" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" style="background: #023941 !important">submit</button>
+                    <x-close-button  type="button" class="btn btn-light close-button"  text="داخستن"/>
+                    <x-submit-button class="btn btn-primary submit-button" type="submit"   text="زیادکردن" />
                 </div>
             </div>
         </div>
     </div>
-
-
     <div class="content-list-buttons" style="background: #023941d4;border-radius:5px;box-shadow: 0 0px 10px #e0e0e0">
         <div class=" list-title">
             <div id="comment-clicker" style="color: white;margin: 0px">بەشداربووان</div>
@@ -52,9 +48,6 @@
                     </div>
                 </div>
                 <div class="row ">
-{{--                    <div class=" col ">--}}
-{{--                        <x-input-select title="گروپ" name="a" />--}}
-{{--                    </div>--}}
                     <div class=" col ">
                         <x-input-text name='subject' title='ڕەگەز' type='text' isValid='true' />
                     </div>
@@ -70,17 +63,10 @@
                         <x-input-text   name='course_duration' title='مۆبایل ٢ ' type='text' isValid='true'/>
                     </div>
                 </div>
-
                 <div class="row ">
                     <div class=" col ">
                         <x-input-text name='subject' title=' بەروار' type='text' isValid='true' />
                     </div>
-{{--                    <div class=" col ">--}}
-{{--                        <x-input-text   name='course_duration' title=' ڕێگەی پارەدان ' type='text' isValid='true'/>--}}
-{{--                    </div>--}}
-{{--                    <div class=" col ">--}}
-{{--                        <x-input-text name='subject' title=' کۆدی پارەدان' type='text' isValid='true' />--}}
-{{--                    </div>--}}
                     <div class=" col ">
                         <x-input-text name='subject' title='ناوی بەکارهێنەر' type='text' isValid='true' />
                     </div>
@@ -98,16 +84,16 @@
                 </div>
 
                 <div class="row pt-4">
-                    <input type="file" class="filepond"  >
+                    <p>زیادکردنی وێنە</p>
+                    <input type="file" class="filepond"  accept="image/*">
                 </div>
-
             </div>
         </div>
             </div>
             <div class="tab-pane fade    " id="transaction">
                 <div  class="p-3 ">
                     <button class="normal-button"  type="button"  data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">زیادکردنی مامەڵەی دارایی</button>
+                            data-bs-target="#staticBackdrop">زیادکردنی مامەڵە  </button>
                 </div>
                 <div class="row p-1  group-lectures-container " >
                     <ul>

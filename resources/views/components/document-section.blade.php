@@ -10,6 +10,7 @@
                 <div class="modal-body ">
 
                     <div class="row p-2">
+                        <p>بەڵگەنامە  </p>
                         <input type="file" class="filepond">
                     </div>
                     <div class="row justify-content-center p-3">
@@ -21,8 +22,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light" style="background: none !important" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" style="background: #023941 !important">submit</button>
+                    <x-close-button  type="button" class="btn btn-light close-button"  text="داخستن"/>
+                    <x-submit-button class="btn btn-primary submit-button" type="submit"   text="زیادکردن" />
                 </div>
             </div>
         </div>

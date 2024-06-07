@@ -1,3 +1,3 @@
 <div>
-    <button class="normal-button {{$class}}" type="{{$type}}">{{$text}}</button>
+    <button class="  {{$class}}"  type="{{$type}}">{{$text}}</button>
 </div>

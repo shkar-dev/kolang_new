@@ -4,15 +4,9 @@
             <div id="comment-clicker" style="color: white;margin: 0px">زیادکردنی ستاف</div>
          </div>
     </div>
-
-
     <div class="row p-3">
-{{--        <?php $tab = ['زیادکردنی ستاف','بەڵگەنامەکان'];?>--}}
-{{--        <x-tab-section :tabs="$tab"/>--}}
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-
-
                 <button class="nav-link active tab-items" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><i class="fa fa-user-plus mx-2" ></i> زیادکردنی ستاف </button>
             </li>
             <li class="nav-item" role="presentation">
@@ -87,8 +81,8 @@
                             </div>
                         </div>
                     </div>
-                         <input type="file" class="filepond"  >
-
+                    <p class="py-3">   زیادکردنی وێنە</p>
+                     <input type="file" class="filepond" accept="image/*" >
                 </div>
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -97,9 +91,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
