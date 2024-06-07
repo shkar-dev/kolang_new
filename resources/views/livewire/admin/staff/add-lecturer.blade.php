@@ -65,7 +65,7 @@
                         <div class=" col ">
                             <div class="form-floating ">
                                 <input type="email" class="form-control  custom-input form-control-sm" id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput">ئاستی خوێندن</label>
+                                <label for="floatingInput">ئاستی زانستی</label>
                             </div>
                         </div>
                         <div class=" col ">

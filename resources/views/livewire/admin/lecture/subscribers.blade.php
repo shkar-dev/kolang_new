@@ -79,7 +79,7 @@
                         <x-input-text name='subject' title='شار' type='text' isValid='true' />
                     </div>
                     <div class=" col ">
-                        <x-input-text   name='course_duration' title=' ئاستی خوێندن  ' type='text' isValid='true'/>
+                        <x-input-text   name='course_duration' title=' ئاستی زانستی  ' type='text' isValid='true'/>
                     </div>
                 </div>
 
