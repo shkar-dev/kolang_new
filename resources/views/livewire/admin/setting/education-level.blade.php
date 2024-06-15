@@ -32,53 +32,36 @@
             </div>
             <div class="row  group-lectures-container">
                 <ul >
-                    <li>
-                        <div class="  p-0">
-                            <h4> <i class="fa fa-book mx-2" > </i>وانەی یەکەم   </h4>
-                            <i  style="width: fit-content;" type="button"
-                                data-bs-target="#staticBackdrop1" class="fa fa-plus icon-button" data-bs-toggle="modal"  ></i>
+                    <li class="">
+                        <div class="parent  p-0">
+                            <h4>    وانەی یەکەم   </h4>
+                            <i class="fa fa-sort-down "   ></i>
                         </div>
-                        <ul id='draggable-elements' class='cursor'>
-                            <li class="sub-lecture">
+                        <ul id='draggable-elements' class='cursor first-child-container'>
+                            <li class="sub-lecture first-child">
                                 <div class="  p-0">
-                                    <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم 1  </h4>
-                                    <i style="width: fit-content; " type="button"
-                                       data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  ></i>
+                                    <h4 >  وانەی یەکەم 1  </h4>
                                 </div>
                             </li>
-                            <li class="sub-lecture">
+                            <li class="sub-lecture first-child">
                                 <div class="  p-0">
-                                    <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم   2</h4>
-                                    <i style="width: fit-content; " type="button"
-                                       data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  > </i>
+                                    <h4 >  وانەی یەکەم 1  </h4>
                                 </div>
                             </li>
-                            <li class="sub-lecture">
-                                <div class="  p-0">
-                                    <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم3   </h4>
-                                    <i style="width: fit-content; " type="button"
-                                       data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  ></i>
+                            <li class="sub-lecture first-child ">
+                                <div class="second_parent  p-0">
+                                    <h4 > وانەی یەکەم4   </h4>
+                                    <i class="fa fa-sort-down "   ></i>
                                 </div>
-                            </li>
-                            <li class="sub-lecture">
-                                <div class="  p-0">
-                                    <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم4   </h4>
-                                    <i style="width: fit-content; " type="button"
-                                       data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  ></i>
-                                </div>
-                                <ul class="px-0 " style="padding-right: 30px !important;">
+                                <ul class="px-0 second-child-container" style="padding-right: 30px !important;">
                                     <li class="  ">
                                         <div class="  p-0">
-                                            <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم3   </h4>
-                                            <i style="width: fit-content; " type="button"
-                                               data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  ></i>
+                                            <h4 >  وانەی یەکەم3   </h4>
                                         </div>
                                     </li>
                                     <li class="  ">
                                         <div class="  p-0">
-                                            <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم3   </h4>
-                                            <i style="width: fit-content; " type="button"
-                                               data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  ></i>
+                                            <h4 >  وانەی یەکەم3   </h4>
                                         </div>
                                     </li>
                                 </ul>
@@ -86,21 +69,23 @@
                         </ul>
                     </li>
                 </ul>
-
-
-
             </div>
-{{--            @foreach($documents as $index => $item)--}}
-{{--                <div class="documents-list-item ">--}}
-{{--                    {{++$index}} - {{$item->name}}--}}
-{{--                    <form action="{{route('admin.setting.documents.destroy',$item)}}" method="post" >--}}
-{{--                        @csrf--}}
-{{--                        @method('Delete')--}}
-{{--                        --}}{{--                        <input type="hidden" value="{{$item->id}}" name="id">--}}
-{{--                        <button type="submit" class="document-delete-icon btn btn-sm btn-light" ><i class="fa fa-trash-can "></i></button>--}}
-{{--                    </form>--}}
-{{--                </div>--}}
-{{--            @endforeach--}}
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
+     <script>
+        var check_first_parent = false;
+        var check_second_parent = false;
+        $('.parent').click(function(){
+            check_first_parent =!check_first_parent;
+            $(this).siblings().toggle();
+            check_first_parent ?  $(this).children('i').addClass(' rotate45deg') : $(this).children('i').removeClass('rotate45deg') ;
+         })
+
+        $('.second_parent').click(function(){
+            check_second_parent =!check_second_parent;
+            $(this).siblings().toggle();
+            check_second_parent ?  $(this).children('i').addClass(' rotate45deg') : $(this).children('i').removeClass('rotate45deg') ;
+        })
+    </script>
 </div>

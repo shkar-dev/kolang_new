@@ -82,7 +82,6 @@
                         <x-input-text   name='course_duration' title=' ئاستی زانستی  ' type='text' isValid='true'/>
                     </div>
                 </div>
-
                 <div class="row pt-4">
                     <p>زیادکردنی وێنە</p>
                     <input type="file" class="filepond"  accept="image/*">

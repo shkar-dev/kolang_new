@@ -154,7 +154,6 @@
                             data-bs-target="#staticBackdrop2">زیادکردنی بەشداربووان</button>
                 </div>
                 <div class="subscribers-main-container p-3">
-
                     <?php
                     $count = [1,2,2,2,2,2,2,2,2];
                     ?>
@@ -165,84 +164,204 @@
             </div>
             <div class="tab-pane fade  " id="lectures">
                 <div class="row p-2 group-lectures-container" >
-                    <div class="row">
+                    <div class=" ">
                         <button class="normal-button"  type="button"
                                 data-bs-target="#staticBackdrop" data-bs-toggle="modal"  >زیادکردنی وانە</button>
                     </div>
-                    <ul >
-                        <li>
-                            <div class="  p-0">
-                                <h4> <i class="fa fa-book mx-2" > </i>وانەی یەکەم   </h4>
-                                <i  style="width: fit-content;" type="button"
-                                       data-bs-target="#staticBackdrop1" class="fa fa-plus icon-button" data-bs-toggle="modal"  ></i>
+
+                    <div class="container">
+                        <div class="content">
+                            C1
+                        </div>
+                        <div class="content">
+                            C2
+                        </div>
+                        <div class="container-item">
+                            <div class="container">
+                                <div class="content">
+                                    C3
+                                </div>
+                                <div class="content">
+                                    C4
+                                </div>
                             </div>
-                            <ul id='draggable-elements' class='cursor'>
-                                <li class="sub-lecture">
-                                    <div class="  p-0">
-                                        <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم 1  </h4>
-                                        <i style="width: fit-content; " type="button"
-                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  ></i>
-                                    </div>
-                                </li>
-                                <li class="sub-lecture">
-                                    <div class="  p-0">
-                                        <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم   2</h4>
-                                        <i style="width: fit-content; " type="button"
-                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  > </i>
-                                    </div>
-                                </li>
-                                <li class="sub-lecture">
-                                    <div class="  p-0">
-                                        <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم3   </h4>
-                                        <i style="width: fit-content; " type="button"
-                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  ></i>
-                                    </div>
-                                </li>
-                                <li class="sub-lecture">
-                                    <div class="  p-0">
-                                        <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم4   </h4>
-                                        <i style="width: fit-content; " type="button"
-                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  ></i>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="  p-0">
-                                <h4> <i class="fa fa-book mx-2" > </i>وانەی یەکەم   </h4>
-                                <i class="fa fa-plus icon-button"></i>
+                        </div>
+                        <div class="container-item">
+                            <div class="container">
+                                <div class="content">
+                                    C5
+                                </div>
+                                <div class="content">
+                                    C6
+                                </div>
                             </div>
-                            <ul id='draggable-elements1' class='cursor'>
-                                <li class="sub-lecture">
-                                    <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم   </h4>
-                                </li>
-                                <li class="sub-lecture">
-                                    <h4  > <i class="fa fa-book mx-2" > </i>وانەی یەکەم   </h4>
-                                </li>
-                                <li class="sub-lecture">
-                                    <h4  > <i class="fa fa-book mx-2" > </i>وانەی یەکەم   </h4>
-                                </li>
-                                <li class="sub-lecture">
-                                    <h4  > <i class="fa fa-book mx-2" > </i>وانەی یەکەم   </h4>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+
+                        </div>
+                        <div class="content">
+                            C7
+                        </div>
+                    </div>
+
+{{--                    <ul id='draggable-elements' class="main-list list">--}}
+{{--                        <li>--}}
+{{--                            <div class="  p-0">--}}
+{{--                                <h4> <i class="fa fa-book mx-2" > </i>وانەی یەکەم   </h4>--}}
+{{--                                <i  style="width: fit-content;" type="button"--}}
+{{--                                       data-bs-target="#staticBackdrop1" class="fa fa-plus icon-button" data-bs-toggle="modal"  ></i>--}}
+{{--                            </div>--}}
+{{--                            <ul  class="child-list cursor list">--}}
+{{--                                <li class="sub-lecture">--}}
+{{--                                    <div class="  p-0">--}}
+{{--                                        <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم 1  </h4>--}}
+{{--                                        <i style="width: fit-content; " type="button"--}}
+{{--                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  ></i>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
+{{--                                <li class="sub-lecture">--}}
+{{--                                    <div class="  p-0">--}}
+{{--                                        <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم   2</h4>--}}
+{{--                                        <i style="width: fit-content; " type="button"--}}
+{{--                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  > </i>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
+{{--                                <li class="sub-lecture">--}}
+{{--                                    <div class="  p-0">--}}
+{{--                                        <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم3   </h4>--}}
+{{--                                        <i style="width: fit-content; " type="button"--}}
+{{--                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  ></i>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
+{{--                                <li class="sub-lecture">--}}
+{{--                                    <div class="  p-0">--}}
+{{--                                        <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم4   </h4>--}}
+{{--                                        <i style="width: fit-content; " type="button"--}}
+{{--                                           data-bs-target="#staticBackdrop1" class="fa fa-trash icon-button" data-bs-toggle="modal"  ></i>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <div class="  p-0">--}}
+{{--                                <h4> <i class="fa fa-book mx-2" > </i>وانەی یەکەم   </h4>--}}
+{{--                                <i class="fa fa-plus icon-button"></i>--}}
+{{--                            </div>--}}
+{{--                            <ul id='draggable-elements1' class='cursor'>--}}
+{{--                                <li class="sub-lecture">--}}
+{{--                                    <h4 > <i class="fa fa-book mx-2" > </i>وانەی یەکەم   </h4>--}}
+{{--                                </li>--}}
+{{--                                <li class="sub-lecture">--}}
+{{--                                    <h4  > <i class="fa fa-book mx-2" > </i>وانەی یەکەم   </h4>--}}
+{{--                                </li>--}}
+{{--                                <li class="sub-lecture">--}}
+{{--                                    <h4  > <i class="fa fa-book mx-2" > </i>وانەی یەکەم   </h4>--}}
+{{--                                </li>--}}
+{{--                                <li class="sub-lecture">--}}
+{{--                                    <h4  > <i class="fa fa-book mx-2" > </i>وانەی یەکەم   </h4>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+
+{{--                    <div class="coursebook-container">--}}
+{{--                       <ul class="lecture tasks__list" id="dragList">--}}
+{{--                           <li class="head-lecture" draggable="true">   وانەی یەکەم</li>--}}
+{{--                           <li class="child-lecture" draggable="true">   1-1</li>--}}
+{{--                           <li class="child-lecture" draggable="true">   1-2</li>--}}
+{{--                           <li class="child-lecture" draggable="true">   1-3</li>--}}
+{{--                           <li class="child-lecture" draggable="true">   1-4</li>--}}
+{{--                       </ul>--}}
+
+{{--                        <ul class="lecture">--}}
+{{--                             <li class="head-lecture">   وانەی دووەم</li>--}}
+{{--                            <li class="child-lecture">   2-1</li>--}}
+{{--                            <li class="child-lecture">   2-2</li>--}}
+{{--                            <li class="child-lecture">   2-3</li>--}}
+{{--                            <li class="child-lecture">   2-4</li>--}}
+{{--                        </ul>--}}
+{{--                        <ul class="lecture">--}}
+{{--                            <li class="head-lecture">   وانەی سێیەم</li>--}}
+{{--                            <li class="child-lecture">   3-1</li>--}}
+{{--                            <li class="child-lecture">   3-2</li>--}}
+{{--                            <li class="child-lecture">   3-3</li>--}}
+{{--                            <li class="child-lecture">   3-4</li>--}}
+{{--                        </ul>--}}
+
+{{--                    </div>--}}
                 </div>
             </div>
         </div>
     </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js" integrity="sha512-TelkP3PCMJv+viMWynjKcvLsQzx6dJHvIGhfqzFtZKgAjKM1YPqcwzzDEoTc/BHjf43PcPzTQOjuTr4YdE8lNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Nested Sortable Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nestedSortable/2.0.0/Scripts/jquery.mjs.nestedSortable.js"></script>
+
+    {{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js" integrity="sha512-TelkP3PCMJv+viMWynjKcvLsQzx6dJHvIGhfqzFtZKgAjKM1YPqcwzzDEoTc/BHjf43PcPzTQOjuTr4YdE8lNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>--}}
     <script>
-        jSuites.sorting(document.getElementById('draggable-elements'), {
-            ondrop: function() {
-                console.log(arguments);
-            }
-        });
-        jSuites.sorting(document.getElementById('draggable-elements1'), {
-            ondrop: function() {
-                console.log(arguments);
-            }
-        });
+        var sortableOptions2 = {
+            group: {
+                name: "sortable-list-2",
+                pull: true,
+                put: true,
+            },
+            animation: 250,
+            forceFallback: true
+
+        };
+
+        var containers = null;
+        containers = document.querySelectorAll(".container");
+        for (var i = 0; i < containers.length; i++) {
+            new Sortable(containers[i], sortableOptions2);
+        }
+
+        // $(document).ready(function(){
+        //     $('.coursebook-containe > ul').nestedSortable({
+        //         handle: 'li',
+        //         items: 'li',
+        //         toleranceElement: '> div',
+        //     });
+        // });
+        // var  dragArea = document.querySelector('.tasks__list');
+        // // new Sortable(dragArea,{
+        // //     animation:350
+        // // })
+        // for (var i = 0; i < 2; i++) {
+        //     new Sortable(i, {
+        //         group: 'nested',
+        //         animation: 150,
+        //         fallbackOnBody: true,
+        //         swapThreshold: 0.65
+        //     });
+        // }
+
+
+        //  $( ".list" ).each(function( index ) {
+       //      $(this).on('mouseover', function(e){
+       //          console.log(e.target)
+       //      })
+       //  });
+       // document.getElementsByClassName('list').forEach( items  =>function(item) {
+       //      alert('aa')
+       //      item.addEventListener('click',function(event){
+       //          alert(event.target)
+       //      })
+       //  })
+       //  jSuites.sorting(document.getElementById('draggable-elements'), {
+       //      ondrop: function() {
+       //          console.log(arguments);
+       //      }
+       //  });
+        // jSuites.sorting(document.getElementById('draggable-elements1'), {
+        //     ondrop: function() {
+        //         console.log(arguments);
+        //     }
+        // });
     </script>
 </div>
 
