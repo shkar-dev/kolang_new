@@ -168,28 +168,43 @@
                         <button class="normal-button"  type="button"
                                 data-bs-target="#staticBackdrop" data-bs-toggle="modal"  >زیادکردنی وانە</button>
                     </div>
+                    <div class="py-3">
+
 
                     <div class="container">
-                        <div class="content">
-                            C1
-                        </div>
-                        <div class="content">
-                            C2
-                        </div>
                         <div class="container-item">
+                            <i class="fa fa-grip-vertical" ></i>
                             <div class="container">
+                                <div class="content">
+                                    وانەی یەکەم
+                                </div>
+                                <div class="content">
+                                    C1   
+                                </div>
+                                <div class="content">
+                                    C2
+                                </div>
                                 <div class="content">
                                     C3
                                 </div>
-                                <div class="content">
-                                    C4
-                                </div>
                             </div>
                         </div>
+
+
                         <div class="container-item">
+                            <i class="fa fa-grip-vertical" ></i>
                             <div class="container">
                                 <div class="content">
-                                    C5
+                                    وانەی دووەم
+                                </div>
+                                <div class="content">
+                                    C6
+                                </div>
+                                <div class="content">
+                                    C6
+                                </div>
+                                <div class="content">
+                                    C6
                                 </div>
                                 <div class="content">
                                     C6
@@ -197,11 +212,9 @@
                             </div>
 
                         </div>
-                        <div class="content">
-                            C7
-                        </div>
-                    </div>
 
+                    </div>
+                    </div>
 {{--                    <ul id='draggable-elements' class="main-list list">--}}
 {{--                        <li>--}}
 {{--                            <div class="  p-0">--}}
