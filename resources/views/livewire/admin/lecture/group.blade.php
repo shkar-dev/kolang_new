@@ -170,8 +170,7 @@
                     </div>
                     <div class="py-3">
 
-
-                    <div class="container">
+                     <div class="container">
                         <div class="container-item">
                             <i class="fa fa-grip-vertical" ></i>
                             <div class="container">
@@ -179,7 +178,7 @@
                                     وانەی یەکەم
                                 </div>
                                 <div class="content">
-                                    C1   
+                                    C1
                                 </div>
                                 <div class="content">
                                     C2

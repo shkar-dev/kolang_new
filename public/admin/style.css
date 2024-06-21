@@ -8,7 +8,7 @@
 }
 
 :root {
-    --primary-color : #023941;
+    --primary-color : #12464e;
     --secondery-color : rgba(239, 239, 239, 0.6);
     --invalid-color:red;
 
@@ -320,9 +320,9 @@ body {
 .menubar-item {
     margin: 5px 0px;
     width: 100%;
-    padding: 12px 15px;
+    height: 50px;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     border-radius: 4px;
     text-align: right;
@@ -333,23 +333,64 @@ body {
 
 }
 
-.menubar-item>p {
-    padding: 0px 10px;
+.menubar-item>a {
+    padding: 10px 10px;
     font-weight: 500;
     color: black;
+    text-decoration: none;
+    width: 80%;
+    height: 100%;
+    font-family: var(--primary-font);
 }
-
+.menubar-item > object > a > i {
+    color: black;
+}
+.menubar-item > object  {
+    transition: 0.3s ease;
+    border-right: 1px solid #e0e0e0;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menubar-item > object > a{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.menubar-item:hover > object  {
+    border-right:1px solid #cad2ce;
+}
+.menubar-item:hover > object:hover {
+    background: var(--primary-color) !important;
+}
+.menubar-item:hover > object:hover > a>  i  {
+    color: white;
+}
 .menubar-item-active {
     background: #054c56 !important;
 }
 
-.menubar-item-active>p {
+.menubar-item-active>a {
     color: white !important;
 }
-
+.menubar-item-active > object > a >i  {
+    color: white !important;
+}
+/*.menubar-item-active > div  {*/
+/*    background: rgba(190, 210, 218, 0.6);*/
+/*}*/
 .menubar-item:hover {
     background: rgba(190, 210, 218, 0.6);
 }
+
+
+
 
 #admin-container {
     width: 100%;

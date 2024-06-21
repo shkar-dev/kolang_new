@@ -67,7 +67,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         return "welcmoe0";
     })->name('admin.upload.froala');
 
-    Route::get('/education-level',EducationLevel::class)->name('admin.setting.education-level');
+    Route::get('/edu_level',EducationLevel::class)->name('admin.setting.education-level');
     Route::post('/test33',[\App\Http\Controllers\FroalaUploadImageController::class,'store'])->name('admin.upload.store');
     Route::get('/documents', \App\Livewire\Admin\Setting\Documents::class)->name('admin.setting.document');
     Route::resource('/documents', \App\Http\Controllers\DocumentController::class)->except('index')->names('admin.setting.documents');
@@ -78,6 +78,7 @@ Route::post('/upload_image',function (Request $request){
     $image->move(public_path('uploads/'), $imageName);
     return response()->json(['link' => '/uploads/'.$imageName]);
 });
+
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
