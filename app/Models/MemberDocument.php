@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class StaffDocument extends Model
+class MemberDocument extends Model
 {
     use HasFactory;
-    protected $fillable = ['staff_id', 'document_type_id', 'link'];
+     protected $fillable = ['member_id', 'document_type_id', 'path'];
 
-    public function staff()
+    public function member()
     {
-        return $this->belongsTo(Staff::class);
+        return $this->belongsTo(Member::class);
     }
 
     public function documentType()

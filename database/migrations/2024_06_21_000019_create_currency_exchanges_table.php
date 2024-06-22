@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('documents', function (Blueprint $table) {
+        Schema::create('currency_exchanges', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->foreignId('currency_id')->constrained('currencies')->onDelete('restrict');
+            $table->decimal('exchange_rate', 12, 2)->default(1);
+            $table->dateTime('date_exchange')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamps();
         });
     }
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('documents');
+        Schema::dropIfExists('currency_exchanges');
     }
 };

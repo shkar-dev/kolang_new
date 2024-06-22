@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Livewire\Admin\Setting\Documents;
-use App\Models\Document;
+use App\Models\DocumentType;
 use Illuminate\Http\Request;
 use Livewire\Livewire;
 
@@ -32,14 +32,14 @@ class DocumentController extends Controller
         $data = $request->validate([
             'name' => 'required|unique:documents,name|max:255',
         ]);
-        Document::create($data);
+        DocumentType::create($data);
         return redirect()->route('admin.setting.document');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Document $document)
+    public function show(DocumentType $document)
     {
         //
     }
@@ -47,7 +47,7 @@ class DocumentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Document $document)
+    public function edit(DocumentType $document)
     {
         //
     }
@@ -55,7 +55,7 @@ class DocumentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Document $document)
+    public function update(Request $request, DocumentType $document)
     {
         //
     }
@@ -63,9 +63,9 @@ class DocumentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Document $document)
+    public function destroy(DocumentType $document)
     {
-        Document::findOrFail($document->id)->delete();
+        DocumentType::findOrFail($document->id)->delete();
         return redirect(route('admin.setting.document'));
     }
 }

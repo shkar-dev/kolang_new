@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('staff_documents', function (Blueprint $table) {
+        Schema::create('member_documents', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('member_id')->constrained('members')->onDelete('restrict');
+            $table->foreignId('document_type_id')->constrained('document_types');
+            $table->string('path');
             $table->timestamps();
         });
     }
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('staff_documents');
+        Schema::dropIfExists('member_documents');
     }
 };
