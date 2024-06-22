@@ -1,3 +1,9 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/css/froala_editor.pkgd.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/css/plugins.pkgd.min.css"  >
+{{--@php--}}
+{{--    $data = \App\Models\FroalaUploadImage::findOrFail(1)--}}
+{{--@endphp--}}
+
 <div class="px-3 py-2  bg-white aaa h-100">
     <link rel="stylesheet" href="{{ asset('admin/fullpage.css') }}">
     <script src="{{ asset('admin/fullpage.js') }}"></script>
@@ -60,6 +66,7 @@
             </div>
         </div>
     </div>
+
     {{--         <div class="row   p-0 justify-content-between"> --}}
     {{--            <div class=" col "> --}}
     {{--                <div class="form-floating mb-3"> --}}
