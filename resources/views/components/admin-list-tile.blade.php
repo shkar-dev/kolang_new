@@ -1,9 +1,9 @@
 <div class="list-tile-container">
     @foreach ($this->users as $user)
-        <div class="list-tile-item">
+        <a class="list-tile-item" href="{{ route('admin.subject.add-subject-form') }}">
             <div class="phone tile-section">
                 {{ $user['subject'] }}
-                <span>{{$user['type']}}</span>
+                <span>{{ $user['type'] }}</span>
             </div>
             <div class="profile tile-section">
                 <div>
@@ -17,6 +17,6 @@
             <div class="status tile-section">
                 <span class="badge bg-primary">Primary</span>
             </div>
-        </div>
+        </a>
     @endforeach
 </div>

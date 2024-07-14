@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\Api\V1\MemberController;
+use App\Http\Controllers\TestController;
+use App\Models\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\Event\Code\Test;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+// Route::post('api/v1/member', [TestController::class, 'create'])->name('members.create');
+// Route::post('membersLogin', [TestController::class, 'store'])->name('members.login');
+// Route::resource('member', MemberController::class)->names('member');
+Route::post('member/login', [MemberController::class, 'login'])->name('member.login');
+Route::post('member/register', [MemberController::class, 'register'])->name('member.register');

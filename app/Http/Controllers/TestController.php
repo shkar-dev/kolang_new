@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Member;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TestController extends Controller
 {
@@ -17,9 +20,24 @@ class TestController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+
+        ]);
+
+        $user = Member::create([
+            'name' => $validated['name'],
+
+
+        ]);
+
+        return response()->json([
+            'message' => 'User created successfully',
+            'member' => $user,
+            'token' => $user->createToken("API TOKEN")->plainTextToken
+        ], 201);
     }
 
     /**
@@ -27,7 +45,22 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $member = Member::where('name', $request->name)->first();
+
+            if ($member) {
+                return response()->json([
+                    'status' => true,
+                    'message' => 'success',
+                    'token' => $member->createToken("API TOKEN")->plainTextToken
+                ], 200);
+            }
+        } catch (Exception $e) {
+            return response()->json([
+                'message' => 'An error occurred while creating user.',
+                'error' => $e->getMessage()
+            ], 500);
+        };
     }
 
     /**

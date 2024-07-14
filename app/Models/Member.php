@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Sanctum\HasApiTokens;
 
 class Member extends Model
 {
-    use HasFactory;
-        protected $fillable = [
+    use HasFactory, HasApiTokens;
+    protected $fillable = [
         'name',
         'type',
         'date_of_birth',
@@ -17,8 +18,6 @@ class Member extends Model
         'mobile_3',
         'academic_level_id',
         'gender',
-        'user_id',
-        'account_id',
     ];
 
     public function academicLevel()
@@ -45,5 +44,5 @@ class Member extends Model
     {
         return $this->belongsToMany(Group::class, 'group_members');
     }
-
+    protected $hidden = [];
 }

@@ -1,8 +1,8 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/css/froala_editor.pkgd.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/css/plugins.pkgd.min.css"  >
-{{--@php--}}
-{{--    $data = \App\Models\FroalaUploadImage::findOrFail(1)--}}
-{{--@endphp--}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/css/plugins.pkgd.min.css">
+{{-- @php --}}
+{{--    $data = \App\Models\FroalaUploadImage::findOrFail(1) --}}
+{{-- @endphp --}}
 
 <div class="px-3 py-2  bg-white aaa h-100">
     <link rel="stylesheet" href="{{ asset('admin/fullpage.css') }}">
@@ -16,16 +16,19 @@
     <div class="row p-3">
         <ul class="nav nav-tabs custom-add-subject-tab">
             <li class="nav-item ">
-                <a href="#home" class="nav-link active tab-items" data-bs-toggle="tab"> <i class="fa fa-file-lines mx-2" ></i> زانیاریەکان </a>
+                <a href="#home" class="nav-link active tab-items" data-bs-toggle="tab"> <i
+                        class="fa fa-file-lines mx-2"></i> زانیاریەکان </a>
             </li>
             <li class="nav-item tab-items">
-                <a href="#profile" class="nav-link tab-items" data-bs-toggle="tab">  <i class="fa fa-pen-nib mx-2" ></i>نووسین </a>
+                <a href="#profile" class="nav-link tab-items" data-bs-toggle="tab"> <i
+                        class="fa fa-pen-nib mx-2"></i>نووسین </a>
             </li>
         </ul>
         <div class="tab-content ">
             <div class="tab-pane fade show active" id="home">
                 <div class="section  custom-row pt-2  px-5    justify-content-between" style="padding-bottom: 60px;">
-                    <form class="needs-validation"  data-toggle="validator">
+                    <form class="needs-validation" data-toggle="validator" method="POST">
+                        @csrf
                         <div class="row ">
                             <div class=" col ">
                                 <x-input-text name='subject' title='بابەت' type='text' isValid='true' />
@@ -36,12 +39,12 @@
 
                                 </div>
                                 <div class=" col ">
-                                    <x-input-select title="بابەت٢" name="aa"/>
+                                    <x-input-select title="بابەت٢" name="aa" />
                                 </div>
                             </div>
                             <div class="row ">
                                 <div class=" col ">
-                                    <x-input-select title="بابەت٢٢" name="aa"/>
+                                    <x-input-select title="بابەت٢٢" name="aa" />
                                 </div>
                                 <div class="
                                         col ">
@@ -52,12 +55,14 @@
                             <div class="row ">
                                 <div class=" col ">
                                     <div class="form-floating ">
-                                        <x-input-text-area name='note' title='تێبینی ' type='text' isValid='true' />
+                                        <x-input-text-area name='note' title='تێبینی ' type='text'
+                                            isValid='true' />
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <x-submit-button type="submit" class="btn btn-primary" text="welcome" />
+
                     </form>
                 </div>
             </div>
