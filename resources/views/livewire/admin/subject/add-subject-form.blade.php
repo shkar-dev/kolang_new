@@ -35,16 +35,17 @@
                             </div>
                             <div class="row ">
                                 <div class=" col ">
-                                    <x-input-select title="بابەت" name="aa" />
+                                    <?php $test = [1, 2, 2]; ?>
+                                    <x-input-select title="جۆری بابەت" name="aa" :options="$test" />
 
                                 </div>
                                 <div class=" col ">
-                                    <x-input-select title="بابەت٢" name="aa" />
+                                    <x-input-select title="نووسەر" name="aa" :options="$test" />
                                 </div>
                             </div>
                             <div class="row ">
                                 <div class=" col ">
-                                    <x-input-select title="بابەت٢٢" name="aa" />
+                                    <x-input-select title="وەرگێڕ" name="aa" :options="$test" />
                                 </div>
                                 <div class="
                                         col ">

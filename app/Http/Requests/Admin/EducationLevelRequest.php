@@ -11,7 +11,7 @@ class EducationLevelRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,8 @@ class EducationLevelRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|max:255',
+            'parent_id' => 'sometimes|nullable',
         ];
     }
 }

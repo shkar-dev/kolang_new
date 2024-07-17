@@ -19,7 +19,10 @@ class AcademicLevel extends Model
     {
         return $this->hasMany(self::class, 'parent_id');
     }
-
+    public function descendants()
+    {
+        return $this->hasMany(self::class, 'parent_id')->with('descendants');
+    }
     public function staff()
     {
         return $this->hasMany(Staff::class);

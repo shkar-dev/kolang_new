@@ -6,11 +6,8 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class InputSelect extends Component
+class InputSelectAcademicLevel extends Component
 {
-    /**
-     * Create a new component instance.
-     */
     public $title;
     public $name;
     public $options;
@@ -21,11 +18,12 @@ class InputSelect extends Component
         $this->options = $options;
     }
 
+
     /**
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string
     {
-        return view('components.input-select');
+        return view('components.input-select-academic-level');
     }
 }

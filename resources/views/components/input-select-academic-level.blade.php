@@ -3,13 +3,23 @@
     <?php
     $id = rand(1, 20);
     ?>
+    {{-- @dd($options) --}}
     <select class="js-example-basic-single col-11 {{ $title }}" id="{{ $id }}" name="{{ $name }}"
         placeholder="{{ $title }}" style="width:100% !important;">
         <option disabled value="0" selected>aa</option>
 
-        @foreach ($options as $item)
-            <option value={{ $item->id }}>{{ $item->name }}</option>
+        @foreach ($options as $child)
+            <option value={{ $child->id }}>{{ $child->name }}</option>
+            @foreach ($child->parent_id as $children)
+                <option value={{ $children->id }}>{{ $child->name . ' > ' . $children->name }}</option>
+
+                @foreach ($children->parent_id as $grandchildren)
+                    <option value={{ $grandchildren->id }}>
+                        {{ $child->name . ' > ' . $children->name . ' > ' . $grandchildren->name }}</option>
+                @endforeach
+            @endforeach
         @endforeach
+
     </select>
     @if (1 == 2)
         <div class="row">

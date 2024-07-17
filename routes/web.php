@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\EducationLevelController;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Livewire\Admin\Setting\EducationLevel;
 use App\Livewire\Admin\Subject\Society;
@@ -96,6 +97,8 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     })->name('admin.upload.froala');
 
     Route::get('/edu_level', EducationLevel::class)->name('admin.setting.education-level');
+    Route::post('/edu_level', [EducationLevelController::class, 'addEducationLevel'])->name('admin.setting.add-education-level');
+
     Route::post('/test33', [\App\Http\Controllers\FroalaUploadImageController::class, 'store'])->name('admin.upload.store');
     Route::get('/documents', \App\Livewire\Admin\Setting\Documents::class)->name('admin.setting.document');
     Route::resource('/documents', \App\Http\Controllers\DocumentController::class)->except('index')->names('admin.setting.documents');
