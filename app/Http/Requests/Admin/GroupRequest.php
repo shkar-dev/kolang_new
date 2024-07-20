@@ -11,7 +11,7 @@ class GroupRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,13 @@ class GroupRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+            'supervisor_id' => 'required',
+            'lecturer_id' => 'required',
+            'price' => 'required',
+            'course_id' => 'required',
         ];
     }
 }

@@ -14,7 +14,7 @@ class DocumentController extends Controller
      */
     public function index()
     {
-          Livewire::component('admin.setting.documents', Documents::class);
+        Livewire::component('admin.setting.documents', Documents::class);
     }
     /**
      * Show the form for creating a new resource.
@@ -30,7 +30,7 @@ class DocumentController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required|unique:documents,name|max:255',
+            'name' => 'required|unique:document_types,name|max:255',
         ]);
         DocumentType::create($data);
         return redirect()->route('admin.setting.document');

@@ -13,6 +13,9 @@
         </div>
         <x-back-button />
     </div>
+    @if (session('success'))
+        <div class="alert alert-success my-2">{{ session('success') }}</div>
+    @endif
     <div class="row p-3">
         <ul class="nav nav-tabs custom-add-subject-tab">
             <li class="nav-item ">
@@ -27,25 +30,26 @@
         <div class="tab-content ">
             <div class="tab-pane fade show active" id="home">
                 <div class="section  custom-row pt-2  px-5    justify-content-between" style="padding-bottom: 60px;">
-                    <form class="needs-validation" data-toggle="validator" method="POST">
+                    <form class="needs-validation" data-toggle="validator"
+                        action="{{ route('admin.subject.add-subject') }}" method="POST">
                         @csrf
                         <div class="row ">
                             <div class=" col ">
-                                <x-input-text name='subject' title='بابەت' type='text' isValid='true' />
+                                <x-input-text name='content' title='بابەت' type='text' isValid='true' />
                             </div>
                             <div class="row ">
                                 <div class=" col ">
                                     <?php $test = [1, 2, 2]; ?>
-                                    <x-input-select title="جۆری بابەت" name="aa" :options="$test" />
+                                    <x-input-select title="جۆری بابەت" name="subject_id" :options="$subjectType" />
 
                                 </div>
                                 <div class=" col ">
-                                    <x-input-select title="نووسەر" name="aa" :options="$test" />
+                                    <x-input-select title="نووسەر" name="writer_id" :options="$writer" />
                                 </div>
                             </div>
                             <div class="row ">
                                 <div class=" col ">
-                                    <x-input-select title="وەرگێڕ" name="aa" :options="$test" />
+                                    <x-input-select title="وەرگێڕ" name="translator_id" :options="$translator" />
                                 </div>
                                 <div class="
                                         col ">
@@ -56,14 +60,13 @@
                             <div class="row ">
                                 <div class=" col ">
                                     <div class="form-floating ">
-                                        <x-input-text-area name='note' title='تێبینی ' type='text'
+                                        <x-input-text-area title='تێبینی ' name="description" type='text'
                                             isValid='true' />
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <x-submit-button type="submit" class="btn btn-primary" text="welcome" />
-
                     </form>
                 </div>
             </div>

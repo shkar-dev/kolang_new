@@ -11,7 +11,7 @@ class LecturerRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,15 @@ class LecturerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required',
+            'mobile_1' => 'required',
+            'date_of_birth' => 'required',
+            'mobile_2' => 'required',
+            'mobile_3' => 'required',
+            'gender' => 'required',
+            'username' => 'required',
+            'password' => 'required',
+            'description' => 'required',
         ];
     }
 }

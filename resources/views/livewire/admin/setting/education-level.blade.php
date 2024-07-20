@@ -1,10 +1,15 @@
 <div class="bg-white h-100 px-3">
+
     <div class="content-list-buttons" style="background: #023941d4;border-radius:5px;box-shadow: 0 0px 10px #e0e0e0">
         <div class="list-button-item list-title">
             <div id="comment-clicker" style="color: white;margin: 0px">ئاستی زانستی</div>
         </div>
     </div>
+    @if (session('success'))
+        <div class="alert alert-success my-2">{{ session('success') }}</div>
+    @endif
     <div class=" justify-content-around px-3  py-4 d-flex ">
+
         <div class="col-6 px-4 pt-2 pb-5 document-sides ">
             <form action="{{ route('admin.setting.add-education-level') }}" method="post">
                 @csrf
@@ -17,7 +22,7 @@
                     <div class=" col ">
 
                         {{-- <x-input-select name="parent_id" title="دیاریبکە" :options="$academicLevels" /> --}}
-                        <x-input-select-academic_level name="academic" title="دیاریبکە" :options="$parent" />
+                        <x-input-select-academic_level name="parent_id" title="دیاریبکە" :options="$parent" />
                     </div>
                 </div>
                 <button type="submit" class="custom-button"> زیادکردن<i class="fa fa-plus mx-1"></i></button>
@@ -42,13 +47,23 @@
                                 <h4> {{ $child->name }} </h4>
                                 <i class="fa fa-sort-down "></i>
                             </div>
-                            <ul id='draggable-elements' class='cursor first-child-container'>
+                            <ul id=' ' class='cursor first-child-container'>
                                 @foreach ($child->parent_id as $children)
                                     <li class="sub-lecture first-child">
 
                                         <div class="  p-0">
                                             <h4>{{ $children->name }} </h4>
                                         </div>
+                                        <ul id=' ' class='cursor first-child-container'>
+                                            @foreach ($children->parent_id as $grandchildren)
+                                                <li class="sub-lecture first-child">
+
+                                                    <div class="  p-0">
+                                                        <h4>{{ $grandchildren->name }} </h4>
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        </ul>
                                     </li>
                                 @endforeach
                             </ul>

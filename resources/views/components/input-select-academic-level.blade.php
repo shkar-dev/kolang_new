@@ -21,11 +21,11 @@
         @endforeach
 
     </select>
-    @if (1 == 2)
+    @error($name)
         <div class="row">
-            <p class="input-invalid-text">تکایە ناو تۆمار بکە </p>
+            <p class="input-invalid-text">تکایە{{ $title }} تۆمار بکە </p>
         </div>
-    @endif
+    @enderror
     <style>
         /* .select2-selection__arrow {
             left: 2% !important;

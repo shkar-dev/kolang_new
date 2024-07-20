@@ -25,6 +25,8 @@ class EducationLevelController extends Controller
                 'parent_id' => $validated['parent_id'],
             ]);
         }
+
+        return redirect()->route('admin.setting.education-level')->with('success', 'Education Level added successfully');
     }
     public function editEducationLevel(EducationLevelRequest $request)
     {

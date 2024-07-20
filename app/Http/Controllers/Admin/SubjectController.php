@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\SubejctRequest;
+use App\Models\Article;
+use Exception;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller
@@ -66,6 +68,19 @@ class SubjectController extends Controller
 
     public function addSubject(SubejctRequest $request)
     {
+        try {
+            Article::create([
+                'content' => $request->content,
+                'writer_id' => $request->writer_id,
+                'translator_id' => $request->translator_id,
+                'subject_id' => $request->subject_id,
+                'date' => $request->date,
+                'description' => $request->description
+            ]);
+            return redirect()->back()->with('success', 'subject added successfully');
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     public function editSubject($id)

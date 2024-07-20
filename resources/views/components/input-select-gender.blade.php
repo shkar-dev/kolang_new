@@ -6,10 +6,8 @@
     <select class="js-example-basic-single col-11 {{ $title }}" id="{{ $id }}" name="{{ $name }}"
         placeholder="{{ $title }}" style="width:100% !important;">
         <option disabled value="0" selected>aa</option>
-
-        @foreach ($options as $item)
-            <option value={{ $item->id }}>{{ $item->name }}</option>
-        @endforeach
+        <option value="male">نێر</option>
+        <option value="female">مێ</option>
 
     </select>
     @error($name)
@@ -17,7 +15,6 @@
             <p class="input-invalid-text">تکایە {{ $title }} تۆمار بکە </p>
         </div>
     @enderror
-
     <style>
         /* .select2-selection__arrow {
             left: 2% !important;

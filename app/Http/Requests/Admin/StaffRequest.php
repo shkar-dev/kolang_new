@@ -11,7 +11,7 @@ class StaffRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,15 @@ class StaffRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name'  => 'required',
+            // 'type'  => 'required',
+            'date_of_birth'  => 'required',
+            'mobile_1'  => 'required',
+            'mobile_2'  => 'required',
+            'mobile_3'  => 'required',
+            'academic_level_id'  => 'required',
+            'gender'  => 'required',
+            'description' => 'required',
         ];
     }
 }

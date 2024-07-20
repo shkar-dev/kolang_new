@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-       Schema::create('staff', function (Blueprint $table) {
+        Schema::create('staff', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->enum('type', ['writer', 'translator', 'other']);
@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('mobile_1', 16);
             $table->string('mobile_2', 16)->nullable();
             $table->string('mobile_3', 16)->nullable();
+            $table->string('image');
+            $table->longText('description');
             $table->foreignId('academic_level_id')->constrained('academic_levels');
             $table->enum('gender', ['male', 'female'])->nullable();
             $table->timestamps();

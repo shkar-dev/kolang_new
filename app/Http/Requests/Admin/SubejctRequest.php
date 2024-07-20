@@ -11,7 +11,7 @@ class SubejctRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,8 +22,12 @@ class SubejctRequest extends FormRequest
     public function rules(): array
     {
         return [
-
-            // validation rules
+            'content' => 'required',
+            'writer_id' => 'required',
+            'translator_id' => 'required',
+            'subject_id' => 'required',
+            'date' => 'required',
+            'description' => 'required',
         ];
     }
 }

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Staff extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'name',
         'type',
@@ -18,6 +18,8 @@ class Staff extends Model
         'mobile_3',
         'academic_level_id',
         'gender',
+        'description',
+        'image'
     ];
 
     public function academicLevel()
@@ -39,5 +41,4 @@ class Staff extends Model
     {
         return $this->hasMany(StaffDocument::class);
     }
-
 }

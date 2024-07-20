@@ -11,7 +11,7 @@ class SubscriberRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,14 @@ class SubscriberRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required',
+            'gender' => 'required',
+            'date_of_birth' => 'required',
+            'mobile_1' => 'required',
+            'mobile_2' => 'required',
+            'mobile_3' => 'required',
+            'username' => 'required',
+            'password' => 'required'
         ];
     }
 }
