@@ -7,18 +7,18 @@
         </div>
     </div>
     {{-- <x-staff-list-tile :staff="$staff"/> --}}
-    {{-- <div class="list-tile-container">
-        @foreach ($this->users as $user)
+    <div class="list-tile-container">
+        @foreach ($this->data as $item)
             <a class="list-tile-item" href="{{ route('admin.subject.add-subject-form') }}">
                 <div class="phone tile-section">
-                    {{ $user['subject'] }}
-                    <span>{{ $user['type'] }}</span>
+                    {{ $item['name'] }}
+                    <span>{{ $item['academicLevel'] }}</span>
                 </div>
                 <div class="profile tile-section">
                     <div>
                         <img src="{{ asset('assets/images/person.jpg') }}" class="profile-img" />
                     </div>
-                    {{ $user['nusar'] }}
+                    {{ $item['mobile_1'] }}
                 </div>
                 <div class="date tile-section">
                     30 min
@@ -27,7 +27,9 @@
                     <span class="badge bg-primary">Primary</span>
                 </div>
             </a>
-        @endforeach --}}
+        @endforeach
+    </div>
+
 </div>
 
 </div>
