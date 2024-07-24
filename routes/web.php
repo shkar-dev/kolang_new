@@ -82,15 +82,17 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
     Route::get('/lecture/group', \App\Livewire\Admin\Lecture\Group::class)->name('admin.course.group');
     Route::post('/lecture/group', [GroupController::class, 'addGroup'])->name('admin.course.add-group');
+    Route::get('/lecture/group-list', \App\Livewire\Admin\Lecture\GroupList::class)->name('admin.course.group-list');
+    Route::post('/lecture/group-list', [GroupController::class, 'deleteGroup'])->name('admin.course.delete-group');
 
 
     Route::get('/lecture/subscribers', \App\Livewire\Admin\Lecture\Subscribers::class)->name('admin.course.subscribers');
     Route::post('/lecture/subscribers', [SubscriberController::class, 'addSubscriber'])->name('admin.course.add-subscriber');
+    Route::get('/lecture/subscriber-list', \App\Livewire\Admin\Lecture\SubscriberList::class)->name('admin.course.subscriber-list');
+    Route::post('/lecture/subscriber-list', [SubscriberController::class, 'deleteSubscriber'])->name('admin.course.delete-subscriber');
 
 
     Route::get('/lecture/course-list', \App\Livewire\Admin\Lecture\CourseList::class)->name('admin.course.course-list');
-    Route::get('/lecture/group-list', \App\Livewire\Admin\Lecture\GroupList::class)->name('admin.course.group-list');
-    Route::get('/lecture/subscriber-list', \App\Livewire\Admin\Lecture\SubscriberList::class)->name('admin.course.subscriber-list');
 
 
 
@@ -98,6 +100,8 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     //    sraff
     Route::get('/staff/writer', \App\Livewire\Admin\Staff\Staff::class)->name('admin.staff.writer');
     Route::post('/staff/staff', [StaffController::class, 'addStaff'])->name('admin.staff.add-staff');
+    Route::post('/staff/writer', [StaffController::class, 'deleteStaff'])->name('admin.staff.delete-writer');
+
     Route::get('/staff/add-lecturer', \App\Livewire\Admin\Staff\AddLecturer::class)->name('admin.staff.add-lecturer');
     Route::get('/staff/translator', \App\Livewire\Admin\Staff\Translator::class)->name('admin.staff.translator');
     Route::get('/staff/lecturer', \App\Livewire\Admin\Staff\Lecturer::class)->name('admin.staff.lecturer');
@@ -112,6 +116,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
     Route::get('/edu_level', EducationLevel::class)->name('admin.setting.education-level');
     Route::post('/edu_level', [EducationLevelController::class, 'addEducationLevel'])->name('admin.setting.add-education-level');
+    Route::post('/edu_level/delete', [EducationLevelController::class, 'deleteEducationLevel'])->name('admin.setting.delete-education-level');
 
     Route::post('/test33', [\App\Http\Controllers\FroalaUploadImageController::class, 'store'])->name('admin.upload.store');
     Route::get('/documents', \App\Livewire\Admin\Setting\Documents::class)->name('admin.setting.document');

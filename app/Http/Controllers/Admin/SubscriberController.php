@@ -8,6 +8,7 @@ use App\Models\Member;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SubscriberController extends Controller
 {
@@ -41,6 +42,17 @@ class SubscriberController extends Controller
     }
     public function deleteSubscriber(Request $request)
     {
+        DB::beginTransaction();
+        try {
+            Member::destroy($request->id);
+            DB::commit();
+            return redirect()->back()->with('success', 'subscriber deleted successfully');
+        } catch (Exception $e) {
+            DB::rollBack();
+            if ($e->getCode() == 23000)
+                return redirect()->back()->with('failed', "there was an error deleting the subscriber");
+            return redirect()->back()->with('failed', $e->getMessage());
+        }
     }
     public function addSubscriberTransaction()
     {

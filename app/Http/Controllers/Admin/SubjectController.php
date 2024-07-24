@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\SubejctRequest;
 use App\Models\Article;
+use App\Models\Subject;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SubjectController extends Controller
 {
@@ -92,7 +94,16 @@ class SubjectController extends Controller
         //update the subject in the database
     }
 
-    public function deleteSubject(SubejctRequest $request)
+    public function deleteSubject(Request $request)
     {
+        DB::beginTransaction();
+        try {
+            Article::destroy($request->id);
+            DB::commit();
+            return redirect()->route('admin.subject.education')->with('success', 'Subject deleted successfully');
+        } catch (Exception $e) {
+            DB::rollBack();
+            return $e->getMessage();
+        }
     }
 }

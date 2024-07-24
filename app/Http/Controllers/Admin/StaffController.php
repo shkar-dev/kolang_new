@@ -8,6 +8,7 @@ use App\Models\Staff;
 use App\Models\TmpImage;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class StaffController extends Controller
 {
@@ -42,8 +43,19 @@ class StaffController extends Controller
     public function updatesStaff(StaffRequest $request)
     {
     }
-    public function deleteStaff($id)
+    public function deleteStaff(Request $request)
     {
+        DB::beginTransaction();
+        try {
+            Staff::destroy($request->id);
+            DB::commit();
+            return redirect()->back()->with('success', 'staff deleted successfully');
+        } catch (Exception $e) {
+            DB::rollBack();
+            if ($e->getCode() == 23000)
+                return redirect()->back()->with('failed', "there was an error deleting the staff");
+            return redirect()->back()->with('failed', $e->getMessage());
+        }
     }
 
     public function addStaffAttachments(StaffRequest $request)

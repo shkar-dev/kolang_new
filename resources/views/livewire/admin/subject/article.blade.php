@@ -8,6 +8,9 @@
     </div>
     {{-- <x-admin-list-tile :users="$users"/> --}}
     <div class="list-tile-container">
+        @if (session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
         @foreach ($this->data as $item)
             <a class="list-tile-item" href="{{ route('admin.subject.add-subject-form') }}">
                 <div class="phone tile-section">
@@ -23,9 +26,7 @@
                 <div class="date tile-section">
                     30 min
                 </div>
-                <div class="status tile-section">
-                    <span class="badge bg-primary">Primary</span>
-                </div>
+                <x-delete-item-button :id="$item['subject_id']" :routeName="route('admin.subject.delete-subject')" />
             </a>
         @endforeach
     </div>

@@ -46,6 +46,8 @@
                             <div class="parent  p-0">
                                 <h4> {{ $child->name }} </h4>
                                 <i class="fa fa-sort-down "></i>
+                                <x-delete-item-button :id="$child->id" :routeName="route('admin.setting.delete-education-level')" />
+
                             </div>
                             <ul id=' ' class='cursor first-child-container'>
                                 @foreach ($child->parent_id as $children)
@@ -53,13 +55,16 @@
 
                                         <div class="  p-0">
                                             <h4>{{ $children->name }} </h4>
+                                            <x-delete-item-button :id="$children->id" :routeName="route('admin.setting.delete-education-level')" />
                                         </div>
+
                                         <ul id=' ' class='cursor first-child-container'>
                                             @foreach ($children->parent_id as $grandchildren)
                                                 <li class="sub-lecture first-child">
 
                                                     <div class="  p-0">
                                                         <h4>{{ $grandchildren->name }} </h4>
+                                                        <x-delete-item-button :id="$grandchildren->id" :routeName="route('admin.setting.delete-education-level')" />
                                                     </div>
                                                 </li>
                                             @endforeach

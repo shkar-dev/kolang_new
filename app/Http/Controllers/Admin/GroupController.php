@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\GroupRequest;
 use App\Models\Group;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GroupController extends Controller
 {
@@ -37,6 +38,17 @@ class GroupController extends Controller
     }
     public function deleteGroup(Request $request)
     {
+        DB::beginTransaction();
+        try {
+            Group::destroy($request->id);
+            DB::commit();
+            return redirect()->back()->with('success', 'Group deleted successfully');
+        } catch (Exception $e) {
+            DB::rollBack();
+            if ($e->getCode() == 23000)
+                return redirect()->back()->with('failed', "there was an error deleting the group");
+            return redirect()->back()->with('failed', $e->getMessage());
+        }
     }
     public function updateGroup(GroupRequest $request)
     {

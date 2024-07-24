@@ -9,6 +9,13 @@
     {{-- <x-admin-list-tile :users="$courses" /> --}}
 
     <div class="list-tile-container">
+        @if (session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+        @if (session('failed'))
+            <div class="alert alert-danger">{{ session('failed') }}</div>
+        @endif
+
         @foreach ($this->courses as $item)
             <a class="list-tile-item" href="{{ route('admin.subject.add-subject-form') }}">
                 <div class="phone tile-section">
@@ -24,9 +31,7 @@
                 <div class="date tile-section">
                     30 min
                 </div>
-                <div class="status tile-section">
-                    <span class="badge bg-primary">Primary</span>
-                </div>
+                <x-delete-item-button :id="$item['id']" :routeName="route('admin.course.delete-course')" />
             </a>
         @endforeach
     </div>

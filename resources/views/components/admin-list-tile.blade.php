@@ -15,7 +15,13 @@
                 30 min
             </div>
             <div class="status tile-section">
-                <span class="badge bg-primary">Primary</span>
+
+                <form action="" method="POST">
+                    @csrf
+                    <input type="hidden" name="id" value="{{ $item['id'] }}">
+                    <button class="badge bg-danger" type="submit">delete</button>
+                </form>
+
             </div>
         </a>
     @endforeach
