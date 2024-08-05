@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\GroupRequest;
+use App\Models\Course;
 use App\Models\Group;
+use App\Models\Member;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -33,8 +35,14 @@ class GroupController extends Controller
             return $e->getMessage();
         }
     }
-    public function editGroup(GroupRequest $request)
+    public function editGroup($id)
     {
+
+        $lecturers = Member::where('type', '=', 'lecturer')->get();
+        $courses = Course::all();
+        $supervisors = $lecturers;
+        $group = Group::where('id', '=', $id)->first();
+        return  view('livewire.admin.lecture.group', compact(['lecturers', 'supervisors', 'courses', 'group']));
     }
     public function deleteGroup(Request $request)
     {
@@ -50,8 +58,25 @@ class GroupController extends Controller
             return redirect()->back()->with('failed', $e->getMessage());
         }
     }
-    public function updateGroup(GroupRequest $request)
+    public function updateGroup(Request $request)
     {
+        try {
+            Group::where('id', '=', $request->id)->update([
+                'name' => $request->name,
+                'start_date' => $request->start_date,
+                'end_date' => $request->end_date,
+                'supervisor_id' => $request->supervisor_id,
+                'lecturer_id' => $request->lecturer_id,
+                'price' => $request->price,
+                'course_id' => $request->course_id,
+            ]);
+
+            return redirect()->back()->with('success', 'Grpup updated successfully');
+
+            // description daxl nakrawa
+        } catch (Exception $e) {
+            redirect()->back()->with('failed', $e->getMessage());
+        }
     }
     public function addGroupSubscriber(GroupRequest $request)
     {

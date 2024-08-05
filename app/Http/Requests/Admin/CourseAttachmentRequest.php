@@ -22,7 +22,8 @@ class CourseAttachmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'filename' => 'required',
+            'title' => 'required',
         ];
     }
 }

@@ -12,6 +12,8 @@ class Article extends Component
 
     use WithAdminModalFilter, WithFetchSubjectsData;
     public $data;
+    public $subject;
+
     #[On('change-filter')]
     public function filterUsers($subjectId, $subject, $subjectType, $author, $startDate, $endDate, $translator)
     {

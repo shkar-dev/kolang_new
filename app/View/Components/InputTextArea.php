@@ -15,15 +15,18 @@ class InputTextArea extends Component
     public $type;
     public $title;
     public $isValid;
+    public $content;
 
     public function __construct(
         $name,
         $title,
+        $content = ''
 
     ) {
         $this->name = $name;
-         $this->title = $title;
-     }
+        $this->title = $title;
+        $this->content = $content;
+    }
     /**
      * Get the view / contents that represent the component.
      */

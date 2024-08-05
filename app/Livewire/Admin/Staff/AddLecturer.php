@@ -9,7 +9,7 @@ class AddLecturer extends Component
 {
     use WithFetchAcademicLevel;
     public $academicLevel;
-
+    public $lecturer;
     public function mount()
     {
 
@@ -18,6 +18,6 @@ class AddLecturer extends Component
 
     public function render()
     {
-        return view('livewire.admin.staff.add-lecturer')->extends('components.layouts.app')->section('section');
+        return view('livewire.admin.staff.add-lecturer');
     }
 }

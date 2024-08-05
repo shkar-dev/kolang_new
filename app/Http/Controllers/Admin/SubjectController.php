@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\SubejctRequest;
+use App\Livewire\Admin\Subject\AddSubjectForm;
 use App\Models\Article;
+use App\Models\Staff;
 use App\Models\Subject;
 use Exception;
 use Illuminate\Http\Request;
@@ -70,28 +72,49 @@ class SubjectController extends Controller
 
     public function addSubject(SubejctRequest $request)
     {
+
         try {
             Article::create([
-                'content' => $request->content,
+                'title' => $request->title,
                 'writer_id' => $request->writer_id,
                 'translator_id' => $request->translator_id,
                 'subject_id' => $request->subject_id,
                 'date' => $request->date,
-                'description' => $request->description
+                'description' => $request->description,
+                'content' => $request->content
             ]);
             return redirect()->back()->with('success', 'subject added successfully');
         } catch (Exception $e) {
-            return $e->getMessage();
+            redirect()->back()->with('failed', $e->getMessage());
         }
     }
 
     public function editSubject($id)
     {
-        //pass data to the edit form
+
+        $subjectType = Subject::all();
+        $translator = Staff::where('type', '=', 'translator')->get();
+        $writer = Staff::where('type', '=', 'writer')->get();
+        $subject = Article::where('id', '=', $id)->first();
+
+        return view('livewire.admin.subject.add-subject-form', compact(['subjectType', 'translator', 'writer', 'subject']));
     }
-    public function updateSubject($id, SubejctRequest $request)
+    public function updateSubject(Request $request)
     {
-        //update the subject in the database
+        try {
+            Article::where('id', '=', $request->id)->update([
+                'title' => $request->title,
+                'writer_id' => $request->writer_id,
+                'translator_id' => $request->translator_id,
+                'subject_id' => $request->subject_id,
+                'date' => $request->date,
+                'description' => $request->description,
+                'content' => $request->content
+            ]);
+            return redirect()->back()->with('success', 'subject updated successfully');
+        } catch (Exception $e) {
+            redirect()->back()->with('failed', $e->getMessage());
+        }
     }
 
     public function deleteSubject(Request $request)

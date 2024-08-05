@@ -13,11 +13,13 @@ class InputSelectGender extends Component
      */
     public $title;
     public $name;
+    public $content;
 
-    public function __construct($title, $name, $options = [])
+    public function __construct($title, $name,  $content = ' ')
     {
         $this->title = $title;
         $this->name = $name;
+        $this->content = $content;
     }
     /**
      * Get the view / contents that represent the component.

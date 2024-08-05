@@ -13,7 +13,7 @@
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
         @foreach ($this->data as $item)
-            <a class="list-tile-item" href="{{ route('admin.subject.add-subject-form') }}">
+            <a class="list-tile-item" href="{{ route('admin.subject.edit-subject', $item['articleId']) }}">
                 <div class="phone tile-section">
                     {{ $item['subjectName'] }}
                     <span>{{ $item['writer'] }}</span>

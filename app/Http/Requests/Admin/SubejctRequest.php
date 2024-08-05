@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class SubejctRequest extends FormRequest
 {
@@ -22,7 +23,7 @@ class SubejctRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'content' => 'required',
+            'title' => 'required',
             'writer_id' => 'required',
             'translator_id' => 'required',
             'subject_id' => 'required',

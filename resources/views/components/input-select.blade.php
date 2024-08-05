@@ -1,14 +1,22 @@
 <div class="row p-3">
     {{--    p-3 --}}
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <?php
     $id = rand(1, 20);
     ?>
-    <select class="js-example-basic-single col-11 {{ $title }}" id="{{ $id }}" name="{{ $name }}"
-        placeholder="{{ $title }}" style="width:100% !important;">
-        <option disabled value="0" selected>aa</option>
+
+    <select class="js-example-basic-single js-states   col-11 {{ $title }}" id="{{ $name }}"
+        name="{{ $name }}" style="width:100% !important;">
+        {{-- <option disabled value="0" selected>aa</option> --}}
+        <option></option>
 
         @foreach ($options as $item)
-            <option value={{ $item->id }}>{{ $item->name }}</option>
+            @if ($item->id == $content)
+                <option value={{ $item->id }} selected>{{ $item->name }}</option>
+            @else
+                <option value={{ $item->id }}>{{ $item->name }}</option>
+            @endif
         @endforeach
 
     </select>
@@ -48,32 +56,42 @@
             height: 42px !important;
         }
 
-        @if (1 == 2)
-            .select2-selection {
-                border-bottom: 1px solid red !important;
-            }
+        /* @if (1 == 2)
+        .select2-selection {
+            border-bottom: 1px solid red !important;
+        }
         @endif
         .skills_select2 {
             width: 120px !important;
         }
+
+        */
     </style>
     <script>
-        $(document).ready(function() {
-            $('#' + "{{ $id }}").select2({
-                placeholder: {
-                    id: 'aa', // the value of the option
-                    text: "{{ $title }}"
-                },
-                allowClear: true,
-                theme: 'bootstrap-5',
-                templateSelection: function(data) {
-                    console.log(data);
-                    if (data.id === 'aa') { // adjust for custom placeholder values
-                        return "{{ $title }}";
-                    }
-                    return data.text;
-                }
-            });
+        // $(document).ready(function() {
+        //     $('#' + "{{ $id }}").select2({
+        //         // placeholder: {
+        //         //     id: "$id",
+        //         //     text: "{{ $title }}"
+        //         // },
+        //         allowClear: true,
+        //         theme: 'bootstrap-5',
+        //         templateSelection: function(data) {
+        //             // console.log(data);
+        //             // if (data.id === $id) { // adjust for custom placeholder values
+        //             //     return "{{ $title }}";
+        //             // }
+        //             // return data.text;
+        //         }
+        //     });
+        // });
+
+
+        $("#" + '{{ $name }}').select2({
+            placeholder: "{{ $title }}",
+            allowClear: true,
+            theme: 'bootstrap-5',
+
         });
     </script>
 </div>

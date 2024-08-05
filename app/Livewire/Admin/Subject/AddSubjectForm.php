@@ -12,6 +12,7 @@ class AddSubjectForm extends Component
     public $subjectType;
     public $translator;
     public $writer;
+    public $subject;
 
     public function mount()
     {
@@ -20,8 +21,10 @@ class AddSubjectForm extends Component
         $this->writer = Staff::where('type', '=', 'writer')->get();
     }
 
+
+
     public function render()
     {
-        return view('livewire.admin.subject.add-subject-form')->extends('components.layouts.app')->section('section');
+        return view('livewire.admin.subject.add-subject-form');
     }
 }

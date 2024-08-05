@@ -4,22 +4,33 @@
     $id = rand(1, 20);
     ?>
     {{-- @dd($options) --}}
-    <select class="js-example-basic-single col-11 {{ $title }}" id="{{ $id }}" name="{{ $name }}"
+    <select class="js-example-basic-single col-11 {{ $title }}" id="{{ $name }}" name="{{ $name }}"
         placeholder="{{ $title }}" style="width:100% !important;">
-        <option disabled value="0" selected>aa</option>
-
+        <option> </option>
         @foreach ($options as $child)
-            <option value={{ $child->id }}>{{ $child->name }}</option>
+            @if ($content == $child->id)
+                <option value={{ $child->id }} selected>{{ $child->name }}</option>
+            @else
+                <option value={{ $child->id }}>{{ $child->name }}</option>
+            @endif
             @foreach ($child->parent_id as $children)
-                <option value={{ $children->id }}>{{ $child->name . ' > ' . $children->name }}</option>
+                @if ($content == $children->id)
+                    <option value={{ $children->id }} selected>{{ $child->name . ' > ' . $children->name }}</option>
+                @else
+                    <option value={{ $children->id }}>{{ $child->name . ' > ' . $children->name }}</option>
+                @endif
 
                 @foreach ($children->parent_id as $grandchildren)
-                    <option value={{ $grandchildren->id }}>
-                        {{ $child->name . ' > ' . $children->name . ' > ' . $grandchildren->name }}</option>
+                    @if ($content == $grandchildren->id)
+                        <option value={{ $grandchildren->id }} selected>
+                            {{ $child->name . ' > ' . $children->name . ' > ' . $grandchildren->name }}</option>
+                    @else
+                        <option value={{ $grandchildren->id }}>
+                            {{ $child->name . ' > ' . $children->name . ' > ' . $grandchildren->name }}</option>
+                    @endif
                 @endforeach
             @endforeach
         @endforeach
-
     </select>
     @error($name)
         <div class="row">
@@ -56,32 +67,40 @@
             height: 42px !important;
         }
 
-        @if (1 == 2)
-            .select2-selection {
-                border-bottom: 1px solid red !important;
-            }
+        /* @if (1 == 2)
+        .select2-selection {
+            border-bottom: 1px solid red !important;
+        }
         @endif
         .skills_select2 {
             width: 120px !important;
         }
+
+        */
     </style>
     <script>
-        $(document).ready(function() {
-            $('#' + "{{ $id }}").select2({
-                placeholder: {
-                    id: 'aa', // the value of the option
-                    text: "{{ $title }}"
-                },
-                allowClear: true,
-                theme: 'bootstrap-5',
-                templateSelection: function(data) {
-                    console.log(data);
-                    if (data.id === 'aa') { // adjust for custom placeholder values
-                        return "{{ $title }}";
-                    }
-                    return data.text;
-                }
-            });
+        /* $(document).ready(function() {
+                                                                                                                                            $('#' + "{{ $id }}").select2({
+                                                                                                                                                placeholder: {
+                                                                                                                                                    id: 'aa', // the value of the option
+                                                                                                                                                    text: "{{ $title }}"
+                                                                                                                                                },
+                                                                                                                                                allowClear: true,
+                                                                                                                                                theme: 'bootstrap-5',
+                                                                                                                                                templateSelection: function(data) {
+                                                                                                                                                    console.log(data);
+                                                                                                                                                    if (data.id === 'aa') { // adjust for custom placeholder values
+                                                                                                                                                        return "{{ $title }}";
+                                                                                                                                                    }
+                                                                                                                                                    return data.text;
+                                                                                                                                                }
+                                                                                                                                            }); */
+        /* }); */
+        $("#" + '{{ $name }}').select2({
+            placeholder: "{{ $title }}",
+            allowClear: true,
+            theme: 'bootstrap-5',
+
         });
     </script>
 </div>

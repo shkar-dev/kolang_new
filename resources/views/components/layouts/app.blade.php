@@ -115,7 +115,6 @@
                     }
                 }
             });
-            // Create the FilePond instance
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/js/froala_editor.pkgd.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.2.0/js/plugins.pkgd.min.js"></script>

@@ -1,20 +1,23 @@
 <div class="row p-3">
-    {{--    p-3 --}}
-    <?php
-    $id = rand(1, 20);
-    ?>
-    <select class="js-example-basic-single col-11 {{ $title }}" id="{{ $id }}" name="{{ $name }}"
-        placeholder="{{ $title }}" style="width:100% !important;">
-        <option disabled value="0" selected>aa</option>
-        <option value="male">نێر</option>
-        <option value="female">مێ</option>
 
+    <select class="js-example-basic-single col-11 {{ $title }}" id="{{ $name }}" name="{{ $name }}"
+        placeholder="{{ $title }}" style="width:100% !important;">
+        <option> </option>
+        @if ($content == 'male')
+            <option value="male" selected>نێر</option>
+            <option value="female">مێ</option>
+        @else
+            <option value="male">نێر</option>
+            <option value="female" selected>مێ</option>
+        @endif
     </select>
     @error($name)
         <div class="row">
             <p class="input-invalid-text">تکایە {{ $title }} تۆمار بکە </p>
         </div>
     @enderror
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
+
     <style>
         /* .select2-selection__arrow {
             left: 2% !important;
@@ -44,33 +47,12 @@
             border-radius: 0px !important;
             height: 42px !important;
         }
-
-        @if (1 == 2)
-            .select2-selection {
-                border-bottom: 1px solid red !important;
-            }
-        @endif
-        .skills_select2 {
-            width: 120px !important;
-        }
     </style>
     <script>
-        $(document).ready(function() {
-            $('#' + "{{ $id }}").select2({
-                placeholder: {
-                    id: 'aa', // the value of the option
-                    text: "{{ $title }}"
-                },
-                allowClear: true,
-                theme: 'bootstrap-5',
-                templateSelection: function(data) {
-                    console.log(data);
-                    if (data.id === 'aa') { // adjust for custom placeholder values
-                        return "{{ $title }}";
-                    }
-                    return data.text;
-                }
-            });
+        $("#" + '{{ $name }}').select2({
+            placeholder: "{{ $title }}",
+            allowClear: true,
+            theme: 'bootstrap-5',
         });
     </script>
 </div>

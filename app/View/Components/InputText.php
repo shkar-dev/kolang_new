@@ -15,17 +15,20 @@ class InputText extends Component
     public $type;
     public $title;
     public $isValid;
+    public $content;
 
     public function __construct(
         $name,
         $title,
-        $type='text',
-        $isValid=false
+        $type = 'text',
+        $isValid = false,
+        $content = ""
     ) {
         $this->name = $name;
         $this->type = $type;
         $this->title = $title;
         $this->isValid = $isValid;
+        $this->content = $content;
     }
 
     /**

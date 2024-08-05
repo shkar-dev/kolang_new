@@ -14,7 +14,7 @@ class SubscriberList extends Component
 
     public function mount()
     {
-        $this->data = Member::where('type', 'participant')->get();
+        $this->data = Member::where('type', 'paticipant')->get();
     }
     public function render()
     {

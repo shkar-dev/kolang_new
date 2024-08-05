@@ -14,7 +14,7 @@ trait WithFetchSubjectsData
             ->join('staff', 'articles.writer_id', '=', 'staff.id')
             ->join('staff as staff1', 'articles.translator_id', '=', 'staff1.id')
             ->where('subjects.name', '=', $subjectType)
-            ->select('articles.*', 'subjects.name as subjectName', 'staff.name as writer', 'staff1.name as translator', 'staff.*')
+            ->select('articles.*', 'subjects.name as subjectName', 'staff.name as writer', 'staff1.name as translator', 'staff.*', 'articles.id as articleId')
             ->get();
     }
 }

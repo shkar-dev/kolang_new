@@ -1,7 +1,7 @@
 <div class="form-floating  ">
     <input type='text' name="{{ $name }}"
-        class="form-control custom-input form-control-sm  @error('input') input-text-invalid @enderror" id="floatingInput"
-        placeholder="name@example.com">
+        class="form-control custom-input form-control-sm  @error('input') input-text-invalid @enderror"
+        id="{{ $name . 'id' }}" placeholder="name@example.com" value="{{ $content }}">
     <label for="floatingInput" class="control-label invalid-label">{{ $title }}</label>
     @error($name)
         <div class="row px-3">

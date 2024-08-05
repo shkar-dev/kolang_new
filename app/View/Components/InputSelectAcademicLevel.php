@@ -11,11 +11,13 @@ class InputSelectAcademicLevel extends Component
     public $title;
     public $name;
     public $options;
-    public function __construct($title, $name, $options = [])
+    public $content;
+    public function __construct($title, $name, $options = [], $content = '')
     {
         $this->title = $title;
         $this->name = $name;
         $this->options = $options;
+        $this->content = $content;
     }
 
 

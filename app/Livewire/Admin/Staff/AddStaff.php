@@ -9,6 +9,7 @@ class AddStaff extends Component
 {
     use WithFetchAcademicLevel;
     public $academic_level;
+    public $staff;
     public function mount()
     {
         $this->academic_level = $this->FetchAcademicLevel();
@@ -16,6 +17,6 @@ class AddStaff extends Component
     public function render()
     {
 
-        return view('livewire.admin.staff.add-staff')->extends('components.layouts.app')->section('section');
+        return view('livewire.admin.staff.add-staff');
     }
 }

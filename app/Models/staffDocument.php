@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class StaffDocument extends Model
 {
     use HasFactory;
-    protected $fillable = ['staff_id', 'document_type_id', 'link'];
+    protected $fillable = ['staff_id', 'document_type_id', 'path'];
 
     public function staff()
     {

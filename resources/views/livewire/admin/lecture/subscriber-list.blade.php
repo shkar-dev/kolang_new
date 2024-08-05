@@ -16,7 +16,7 @@
             <div class="alert alert-danger">{{ session('failed') }}</div>
         @endif
         @foreach ($this->data as $item)
-            <a class="list-tile-item" href="{{ route('admin.subject.add-subject-form') }}">
+            <a class="list-tile-item" href="{{ route('admin.course.edit-subscriber', $item['id']) }}">
                 <div class="phone tile-section">
                     {{ $item['name'] }}
                     <span>{{ $item['type'] }}</span>

@@ -17,7 +17,7 @@
         @endif
 
         @foreach ($this->courses as $item)
-            <a class="list-tile-item" href="{{ route('admin.subject.add-subject-form') }}">
+            <a class="list-tile-item" href="{{ route('admin.course.edit-course', $item['id']) }}">
                 <div class="phone tile-section">
                     {{ $item['name'] }}
                     <span>{{ $item['duration'] . 'ڕۆژ' }}</span>

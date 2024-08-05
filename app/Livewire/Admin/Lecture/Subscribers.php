@@ -9,12 +9,13 @@ class Subscribers extends Component
 {
     use WithFetchAcademicLevel;
     public $academicLevels;
+    public $subscriber;
     public function mount()
     {
         $this->academicLevels = $this->FetchAcademicLevel();
     }
     public function render()
     {
-        return view('livewire.admin.lecture.subscribers')->extends('components.layouts.app')->section('section');
+        return view('livewire.admin.lecture.subscribers');
     }
 }
