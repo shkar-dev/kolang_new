@@ -19,7 +19,7 @@
             <a class="list-tile-item" href="{{ route('admin.staff.editLecturer', $item['id']) }}">
                 <div class="phone tile-section">
                     {{ $item['name'] }}
-                    <span>{{ $item['academicLevel'] }}</span>
+                    <span>{{ $item['mobile_2'] }}</span>
                 </div>
                 <div class="profile tile-section">
                     <div>

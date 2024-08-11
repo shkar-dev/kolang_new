@@ -15,9 +15,9 @@
                             aria-label="Close"></button>
                     </div>
                     <div class="modal-body ">
-                        {{--                    <div class="row p-2"> --}}
-                        {{--                        <input type="file" class="filepond"> --}}
-                        {{--                    </div> --}}
+                        {{-- <div class="row p-2">
+                            <input type="file" class="filepond">
+                        </div> --}}
                         <div class="row justify-content-center p-3">
 
                             <div class="row p-0">
@@ -25,7 +25,12 @@
                                     <x-input-text title="وانە" name="aa" />
                                 </div>
                             </div>
-
+                            <div class="row p-0">
+                                <div class=" col-12 ">
+                                    <?php $type = ['ڤیدیۆ', 'خوێندنەوە']; ?>
+                                    <x-input-select title="جۆر دیاریبکە" name="aa" />
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -74,6 +79,7 @@
                         <button type="button" style="font-size: 11px" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
+
                     <div class="modal-body ">
                         <div class="row justify-content-center p-3">
                             <div class="row p-0">
@@ -83,23 +89,25 @@
                             </div>
                         </div>
                         <div class="subscriber-modal-container">
-                            <?php
-                            $count1 = [1, 2, 2, 2, 2, 2, 2, 2, 2];
-                            ?>
-                            @foreach ($count1 as $item)
-                                <x-subscriber-item class="col-12" />
-                            @endforeach
+                            @if ($subscribers)
+                                @foreach ($subscribers as $item)
+                                    <x-subscriber-item class="col-12" :content="$item" id="{{ $item->id }}"
+                                        :isCheckAvailable="true" />
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                     <div class="modal-footer">
                         <x-close-button type="button" class="btn btn-light close-button" text="داخستن" />
-                        <x-submit-button class="btn btn-primary submit-button" type="submit" text="زیادکردن" />
+
+                        <button type="button"class="btn btn-primary submit-button" id="test">زیادکردن</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="content-list-buttons" style="background: #023941d4;border-radius:5px;box-shadow: 0 0px 10px #e0e0e0">
+        <div class="content-list-buttons" id="message"
+            style="background: #023941d4;border-radius:5px;box-shadow: 0 0px 10px #e0e0e0">
             <div class=" list-title">
                 <div id="comment-clicker" style="color: white;margin: 0px">گروپ</div>
             </div>
@@ -184,12 +192,13 @@
                                 data-bs-target="#staticBackdrop2">زیادکردنی بەشداربووان</button>
                         </div>
                         <div class="subscribers-main-container p-3">
-                            <?php
-                            $count = [1, 2, 2, 2, 2, 2, 2, 2, 2];
-                            ?>
-                            @foreach ($count as $item)
-                                <x-subscriber-item class="col-3" />
-                            @endforeach
+
+                            @if ($groupSubscribers)
+                                @foreach ($groupSubscribers->members as $item)
+                                    <x-subscriber-item class="col-3" :content="$item" id="{{ $group->id }}"
+                                        :isCheckAvailable="false" />
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                     <div class="tab-pane fade  " id="lectures">
@@ -269,6 +278,41 @@
             for (var i = 0; i < containers.length; i++) {
                 new Sortable(containers[i], sortableOptions2);
             }
+            console.log(containers);
         </script>
+        @if ($group)
+            <script>
+                var $j = jQuery.noConflict();
+                $('#test').click(function(e) {
+                    e.preventDefault();
+                    var all_ids = [];
+                    $('input:checkbox[name=ids]:checked').each(function(e) {
+                        all_ids.push($(this).val());
+                    })
+                    $j.ajax({
+                        url: "{{ route('admin.course.add-group-subscriber') }}",
+                        type: 'POST',
+                        data: {
+                            group_id: "{{ $group->id }}",
+                            ids: all_ids,
+                            _token: '{{ csrf_token() }}'
+                        },
+                        success: function(data) {
+                            if (data == 1) {
+                                showMessage('success', 'success');
+
+                            }
+                        }
+                    })
+                })
+
+                function showMessage(message, type) {
+                    $('#staticBackdrop2').hide(function() {
+                        $(".modal-backdrop").remove();
+                    });
+                }
+            </script>
+        @endif
+
     </div>
 @endsection

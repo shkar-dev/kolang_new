@@ -9,8 +9,8 @@
         </button>
     </div>
     <div class="list-button-item">
-        <a href="{{ route('admin.course.group') }}" class="sort-button" id="add-btn" type="button"
-           data-bs-toggle="modal" data-bs-target="#staticBackdrop" wire:navigate>
+        <a href="{{ route('admin.course.group') }}" class="sort-button" id="add-btn" type="button" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop" wire:navigate>
             <i class="fa fa-plus"></i>
         </a>
     </div>
@@ -19,7 +19,7 @@
             <i class="fa-solid fa-filter"></i>
         </button>
 
-        <livewire:admin.subject.filter-modal :subjectType="$title" :isGeneral="$isGeneral"/>
+        <livewire:admin.subject.filter-modal :subjectType="$title" :isGeneral="$isGeneral" />
     </div>
 </div>
 <script>
@@ -32,11 +32,11 @@
             canBeClosed = true;
             check = !check;
             $(this).addClass('active-sort-button')
-            $('#filterbox').fadeIn()
+            $('#filterbox').show()
         } else {
             check = !check;
             $(this).removeClass('active-sort-button')
-            $('#filterbox').fadeOut()
+            $('#filterbox').hide()
         }
     })
 

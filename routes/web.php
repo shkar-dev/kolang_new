@@ -8,7 +8,9 @@ use App\Http\Controllers\Admin\StaffController;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\SubscriberController;
 use App\Http\Controllers\Admin\TmpImageController;
+use App\Http\Controllers\Admin\UsersController;
 use App\Livewire\Admin\Setting\EducationLevel;
+use App\Livewire\Admin\Setting\Users;
 use App\Livewire\Admin\Subject\Society;
 use App\Models\TmpImage;
 use Illuminate\Http\Request;
@@ -41,8 +43,7 @@ Route::get('/userlogin', function () {
 
 
 Route::middleware('auth')->prefix('admin')->group(function () {
-    //    Route::get('/home', \App\Livewire\Admin\Dashboard::class);
-    //    subject
+
 
     Route::get('/subject/general', \App\Livewire\Admin\Subject\SubjectGeneral::class)->name('admin.subject.subjectGeneral');
     Route::get('/subject/education', \App\Livewire\Admin\Subject\Education::class)->name('admin.subject.education');
@@ -52,7 +53,6 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/subject/article', \App\Livewire\Admin\Subject\Article::class)->name('admin.subject.article');
     Route::get('/subject/add-subject', \App\Livewire\Admin\Subject\AddSubjectForm::class)->name('admin.subject.add-subject-form');
 
-    // Route::post('/test', [SubjectController::class, 'index'])->name('test222');
     Route::post('/subject/add-subject', [SubjectController::class, 'addSubject'])->name('admin.subject.add-subject');
     Route::get('/subject/edit-subject/{id}', [SubjectController::class, 'editSubject'])->name('admin.subject.edit-subject');
     Route::post('/subject/edit-subject', [SubjectController::class, 'updateSubject'])->name('admin.subject.update-subject');
@@ -68,7 +68,6 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::post('/lecture/course', [CourseController::class, 'addCourse'])->name('admin.course.add-course');
     Route::post('/lecture/course-attachment', [CourseController::class, 'addAttachment'])->name('admin.course.add-course-attachment');
 
-    // Route::get('/lecture/edit-course', \App\Livewire\Admin\Lecture\Course::class)->name('admin.course.edit-course');
 
     Route::get('/lecture/edit-course/{id}', [CourseController::class, 'editCourse'])->name('admin.course.edit-course');
     Route::post('/lecture/edit-course/{id}', [CourseController::class, 'updateCourse'])->name('admin.course.update-course');
@@ -83,6 +82,8 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::post('/lecture/edit-group/{id}', [GroupController::class, 'updateGroup'])->name('admin.course.update-group');
     Route::get('/lecture/group-list', \App\Livewire\Admin\Lecture\GroupList::class)->name('admin.course.group-list');
     Route::post('/lecture/group-list', [GroupController::class, 'deleteGroup'])->name('admin.course.delete-group');
+    Route::post('/lecture/group-list', [GroupController::class, 'deleteGroup'])->name('admin.course.delete-group');
+    Route::post('/lecture/group-remove-subscriber', [GroupController::class, 'removeGroupSubscriber'])->name('admin.course.delete-group-subscriber');
 
 
     Route::get('/lecture/subscribers', \App\Livewire\Admin\Lecture\Subscribers::class)->name('admin.course.subscribers');
@@ -124,18 +125,30 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::post('/test33', [\App\Http\Controllers\FroalaUploadImageController::class, 'store'])->name('admin.upload.store');
     Route::get('/documents', \App\Livewire\Admin\Setting\Documents::class)->name('admin.setting.document');
     Route::resource('/documents', \App\Http\Controllers\DocumentController::class)->except('index')->names('admin.setting.documents');
+    Route::get('/users', [UsersController::class, 'index'])->name('admin.setting.users');
+    Route::get('/users-list', [UsersController::class, 'usersList'])->name('admin.setting.users-list');
+    Route::post('/users-list', [UsersController::class, 'deleteUser'])->name('admin.setting.delete-user');
+    Route::get('/users-edit/{id}', [UsersController::class, 'editUser'])->name('admin.setting.edit-user');
+    Route::post('/users-edit/{id}', [UsersController::class, 'updateUser'])->name('admin.setting.update-user');
+    Route::post('/users', [UsersController::class, 'addUser'])->name('admin.setting.add-users');
 })->middleware('auth');
 
-Route::post('/upload_image', function (Request $request) {
-    $image = $request->file('file');
-    $imageName = time() . '.' . $image->getClientOriginalExtension();
-    $image->move(public_path('uploads/'), $imageName);
-    return response()->json(['link' => '/uploads/' . $imageName]);
-});
+Route::post('/lecture/group-subscribers', [GroupController::class, 'addGroupSubscriber'])->name('admin.course.add-group-subscriber');
+// Route::post('/upload_image', function (Request $request) {
+//     $image = $request->file('file');
+//     $imageName = time() . '.' . $image->getClientOriginalExtension();
+//     $image->move(public_path('uploads/'), $imageName);
+//     return response()->json(['link' => '/uploads/' . $imageName]);
+// });
+Route::post('/upload_image', [SubjectController::class, 'froala'])->name('admin.subject.froala_upload');
 
 Route::post('/imageUpload', TmpImageController::class);
 Route::post('/test111', function (Request $request) {
     return 1;
+});
+
+Route::post('/test_sub ', function (Request $request) {
+    return $request;
 });
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

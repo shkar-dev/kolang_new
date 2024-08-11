@@ -11,7 +11,7 @@ class CourseAttachmentRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,8 +22,15 @@ class CourseAttachmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'filename' => 'required',
-            'title' => 'required',
+            'course_id' => 'required',
+            'attachment' => 'required',
+            'name' => 'required',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'attachment.required' => 'وینە بەرزبکەرەوە ',
         ];
     }
 }

@@ -7,17 +7,21 @@ use App\Http\Requests\Admin\StaffRequest;
 use App\Models\Staff;
 use App\Models\TmpImage;
 use App\Traits\WithFetchAcademicLevel;
+use App\Traits\WithRemoveStorageImage;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class StaffController extends Controller
 {
-    use WithFetchAcademicLevel;
+    use WithFetchAcademicLevel, WithRemoveStorageImage;
     public function addStaff(StaffRequest $request)
     {
+
+        $profile = json_decode($request->profile, true);
+
         try {
-            $tmpImage = TmpImage::where('folder', '=', $request->image)->first();
+            $tmpImage = TmpImage::where('folder', '=', $profile['folder'])->first();
             if ($tmpImage) {
                 Staff::create([
                     'name'  => $request->name,
@@ -31,21 +35,27 @@ class StaffController extends Controller
                     'description' => $request->description,
                     'image' => $tmpImage->folder . '/' . $tmpImage->filename,
                 ]);
-                TmpImage::where('folder', '=', $request->image)->delete();
+                TmpImage::where('folder', '=', $request->profile)->delete();
+                return redirect()->back()->with('success', 'staff added successfully');
             }
-            return redirect()->back()->with('success', 'staff added successfully');
+            return redirect()->back();
             // description daxl nakrawa
         } catch (Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with('failed', $e->getMessage());
         }
     }
     public function editStaff($id)
     {
-        $academic_level = $this->FetchAcademicLevel();
-        $staff  = Staff::where('id', '=', $id)->first();
-        return view('livewire.admin.staff.add-staff', compact('academic_level', 'staff'));
+        try {
+
+            $academic_level = $this->FetchAcademicLevel();
+            $staff  = Staff::where('id', '=', $id)->first();
+            return view('livewire.admin.staff.add-staff', compact('academic_level', 'staff'));
+        } catch (Exception $e) {
+            return redirect()->back()->with('failed', $e->getMessage());
+        }
     }
-    public function updateStaff(Request $request)
+    public function updateStaff(StaffRequest $request)
     {
         try {
             // $tmpImage = TmpImage::where('folder', '=', $request->image)->first();
@@ -66,15 +76,19 @@ class StaffController extends Controller
             // }
             return redirect()->back()->with('success', 'staff updated successfully');
         } catch (Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with('failed', $e->getMessage());
         }
     }
 
     public function deleteStaff(Request $request)
     {
         DB::beginTransaction();
+
         try {
-            Staff::destroy($request->id);
+            $staff = Staff::where('id', '=', $request->id)->where('type', '=', 'writer')->first();
+            if ($this->RemoveStorageImage($staff->image, 'profile')) {
+                Staff::destroy($request->id);
+            }
             DB::commit();
             return redirect()->back()->with('success', 'staff deleted successfully');
         } catch (Exception $e) {
@@ -85,10 +99,6 @@ class StaffController extends Controller
         }
     }
 
-    public function addStaffAttachments(StaffRequest $request)
-    {
-    }
-    public function deleteStaffAttachments()
-    {
-    }
+    public function addStaffAttachments(StaffRequest $request) {}
+    public function deleteStaffAttachments() {}
 }

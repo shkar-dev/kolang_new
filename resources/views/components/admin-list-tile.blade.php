@@ -1,5 +1,5 @@
 <div class="list-tile-container">
-    @foreach ($data as $item)
+    {{-- @foreach ($data as $item)
         <a class="list-tile-item" href="{{ route('admin.subject.add-subject-form') }}">
             <div class="phone tile-section">
                 {{ $item['subjectName'] }}
@@ -24,5 +24,5 @@
 
             </div>
         </a>
-    @endforeach
+    @endforeach --}}
 </div>

@@ -7,7 +7,6 @@
         </div>
     </div>
     {{-- <x-admin-list-tile :users="$courses" /> --}}
-
     <div class="list-tile-container">
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
@@ -15,7 +14,6 @@
         @if (session('failed'))
             <div class="alert alert-danger">{{ session('failed') }}</div>
         @endif
-
         @foreach ($this->courses as $item)
             <a class="list-tile-item" href="{{ route('admin.course.edit-course', $item['id']) }}">
                 <div class="phone tile-section">
@@ -35,5 +33,4 @@
             </a>
         @endforeach
     </div>
-
 </div>

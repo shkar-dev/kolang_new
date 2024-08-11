@@ -89,17 +89,27 @@ class SubjectController extends Controller
         }
     }
 
+    public function froala(Request $request)
+    {
+        $image = $request->file('file');
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('uploads/'), $imageName);
+        return response()->json(['link' => '/uploads/' . $imageName]);
+    }
+
     public function editSubject($id)
     {
-
-        $subjectType = Subject::all();
-        $translator = Staff::where('type', '=', 'translator')->get();
-        $writer = Staff::where('type', '=', 'writer')->get();
-        $subject = Article::where('id', '=', $id)->first();
-
-        return view('livewire.admin.subject.add-subject-form', compact(['subjectType', 'translator', 'writer', 'subject']));
+        try {
+            $subjectType = Subject::all();
+            $translator = Staff::where('type', '=', 'translator')->get();
+            $writer = Staff::where('type', '=', 'writer')->get();
+            $subject = Article::where('id', '=', $id)->first();
+            return view('livewire.admin.subject.add-subject-form', compact(['subjectType', 'translator', 'writer', 'subject']));
+        } catch (Exception $e) {
+            return redirect()->back()->with('failed', $e->getMessage());
+        }
     }
-    public function updateSubject(Request $request)
+    public function updateSubject(SubejctRequest $request)
     {
         try {
             Article::where('id', '=', $request->id)->update([
@@ -123,10 +133,10 @@ class SubjectController extends Controller
         try {
             Article::destroy($request->id);
             DB::commit();
-            return redirect()->route('admin.subject.education')->with('success', 'Subject deleted successfully');
+            return redirect()->back()->with('success', 'Subject deleted successfully');
         } catch (Exception $e) {
             DB::rollBack();
-            return $e->getMessage();
+            return redirect()->back()->with('failed', $e->getMessage());
         }
     }
 }

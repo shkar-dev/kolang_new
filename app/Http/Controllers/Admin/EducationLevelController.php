@@ -14,25 +14,29 @@ class EducationLevelController extends Controller
 {
     public function addEducationLevel(EducationLevelRequest $request)
     {
-
         $validated  = $request->validated();
-        if ($request->parent_id == null) {
-            AcademicLevel::create([
-                'name' => $validated['name'],
-                'parent_id' => null
-            ]);
-        } else {
-            AcademicLevel::create([
-                'name' => $validated['name'],
-                'parent_id' => $validated['parent_id'],
-            ]);
-        }
+        try {
+            if ($request->parent_id == null) {
+                AcademicLevel::create([
+                    'name' => $validated['name'],
+                    'parent_id' => null
+                ]);
+            } else {
+                AcademicLevel::create([
+                    'name' => $validated['name'],
+                    'parent_id' => $validated['parent_id'],
+                ]);
+            }
 
-        return redirect()->route('admin.setting.education-level')->with('success', 'Education Level added successfully');
+            return redirect()->back()->with('success', 'Education Level added successfully');
+        } catch (Exception $e) {
+            DB::rollBack();
+            if ($e->getCode() == 23000)
+                return redirect()->back()->with('failed', "there was an error deleting the education level");
+            return redirect()->back()->with('failed', $e->getMessage());
+        }
     }
-    public function editEducationLevel(EducationLevelRequest $request)
-    {
-    }
+    public function editEducationLevel(EducationLevelRequest $request) {}
     public function deleteEducationLevel(Request $request)
     {
         DB::beginTransaction();

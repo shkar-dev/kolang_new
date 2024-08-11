@@ -11,9 +11,10 @@
                         subject
                     </span>
                 </div>
-                <p >بابەت</p>
+                <p>بابەت</p>
             </div>
-            <div class="iconbar-icon course-icon course-icon {{ preg_match('(course|group|subscriber)', request()->getPathInfo()) ? ' icon-bar-active-rtl' : '' }} ">
+            <div
+                class="iconbar-icon course-icon course-icon {{ preg_match('(course|group|subscriber)', request()->getPathInfo()) ? ' icon-bar-active-rtl' : '' }} ">
                 <div>
                     <i class="fa-solid fa-video"></i>
                 </div>
@@ -27,15 +28,17 @@
                 <p>ستاف</p>
             </div>
 
-            <div class="iconbar-icon setting-icon  {{ preg_match('(documents|edu_level)', request()->getPathInfo()) ? ' icon-bar-active-rtl' : '' }}">
+            <div
+                class="iconbar-icon setting-icon  {{ preg_match('(documents|edu_level)', request()->getPathInfo()) ? ' icon-bar-active-rtl' : '' }}">
                 <div>
                     <i class="fa-solid fa-gear"></i>
                 </div>
                 <p>ڕێکخستن</p>
             </div>
-            <a class="iconbar-icon setting-icon" style="position:absolute;text-decoration:none; bottom:30px; "  href="{{ route('logout') }}"
-               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();" >
+            <a class="iconbar-icon setting-icon" style="position:absolute;text-decoration:none; bottom:30px; "
+                href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                 <div>
                     <i class="fa fa-power-off"></i>
                 </div>
@@ -46,37 +49,78 @@
             </form>
         </div>
 
-
     </div>
     <div class="menubar">
         <div>
             <div class="menubar-icons">
-                <x-dashboard-tile icon="fa fa-plus"  inner-route-direction="{{route('admin.subject.add-subject-form')}}"  is-icon-needed="true"  cssClass=" subject-item  {{    str_contains(request()->getPathInfo(), 'general') ? 'menubar-item-active' : '' }}"   routeDirection="{{ route('admin.subject.subjectGeneral') }}"  text="گشتی" />
-                <x-dashboard-tile icon="fa fa-plus"  inner-route-direction="{{route('admin.subject.add-subject-form')}}" is-icon-needed="true"  cssClass=" subject-item  {{    str_contains(request()->getPathInfo(), 'education') ? 'menubar-item-active' : '' }}"   routeDirection="{{ route('admin.subject.education') }}"  text="پەروەردە" />
-                <x-dashboard-tile icon="fa fa-plus"  inner-route-direction="{{route('admin.subject.add-subject-form')}}" is-icon-needed="true"  cssClass=" subject-item  {{    str_contains(request()->getPathInfo(), 'learning') ? 'menubar-item-active' : '' }}"   routeDirection="{{ route('admin.subject.learning') }}"  text="فێربوون" />
-                <x-dashboard-tile icon="fa fa-plus"  inner-route-direction="{{route('admin.subject.add-subject-form')}}" is-icon-needed="true"  cssClass=" subject-item  {{    str_contains(request()->getPathInfo(), 'society') ? 'menubar-item-active' : '' }}"   routeDirection="{{ route('admin.subject.society') }}"  text="کۆمەڵگە" />
-                <x-dashboard-tile icon="fa fa-plus"  inner-route-direction="{{route('admin.subject.add-subject-form')}}" is-icon-needed="true"  cssClass=" subject-item  {{    str_contains(request()->getPathInfo(), 'ethics') ? 'menubar-item-active' : '' }}"   routeDirection="{{ route('admin.subject.ethics') }}"  text="ئەخلاق" />
-                <x-dashboard-tile icon="fa fa-plus"  inner-route-direction="{{route('admin.subject.add-subject-form')}}" is-icon-needed="true"  cssClass=" subject-item  {{    str_contains(request()->getPathInfo(), 'article') ? 'menubar-item-active' : '' }}"   routeDirection="{{ route('admin.subject.article') }}"  text="وتار" />
+                <x-dashboard-tile icon="fa fa-plus"
+                    inner-route-direction="{{ route('admin.subject.add-subject-form') }}" is-icon-needed="true"
+                    cssClass=" subject-item  {{ str_contains(request()->getPathInfo(), 'general') ? 'menubar-item-active' : '' }}"
+                    routeDirection="{{ route('admin.subject.subjectGeneral') }}" text="گشتی" />
+                <x-dashboard-tile icon="fa fa-plus"
+                    inner-route-direction="{{ route('admin.subject.add-subject-form') }}" is-icon-needed="true"
+                    cssClass=" subject-item  {{ str_contains(request()->getPathInfo(), 'education') ? 'menubar-item-active' : '' }}"
+                    routeDirection="{{ route('admin.subject.education') }}" text="پەروەردە" />
+                <x-dashboard-tile icon="fa fa-plus"
+                    inner-route-direction="{{ route('admin.subject.add-subject-form') }}" is-icon-needed="true"
+                    cssClass=" subject-item  {{ str_contains(request()->getPathInfo(), 'learning') ? 'menubar-item-active' : '' }}"
+                    routeDirection="{{ route('admin.subject.learning') }}" text="فێربوون" />
+                <x-dashboard-tile icon="fa fa-plus"
+                    inner-route-direction="{{ route('admin.subject.add-subject-form') }}" is-icon-needed="true"
+                    cssClass=" subject-item  {{ str_contains(request()->getPathInfo(), 'society') ? 'menubar-item-active' : '' }}"
+                    routeDirection="{{ route('admin.subject.society') }}" text="کۆمەڵگە" />
+                <x-dashboard-tile icon="fa fa-plus"
+                    inner-route-direction="{{ route('admin.subject.add-subject-form') }}" is-icon-needed="true"
+                    cssClass=" subject-item  {{ str_contains(request()->getPathInfo(), 'ethics') ? 'menubar-item-active' : '' }}"
+                    routeDirection="{{ route('admin.subject.ethics') }}" text="ئەخلاق" />
+                <x-dashboard-tile icon="fa fa-plus"
+                    inner-route-direction="{{ route('admin.subject.add-subject-form') }}" is-icon-needed="true"
+                    cssClass=" subject-item  {{ str_contains(request()->getPathInfo(), 'article') ? 'menubar-item-active' : '' }}"
+                    routeDirection="{{ route('admin.subject.article') }}" text="وتار" />
 
-                <x-dashboard-tile icon="fa fa-plus"  inner-route-direction="{{route('admin.course.course')}}" is-icon-needed="true"  cssClass=" course-item   {{    str_contains(request()->getPathInfo(), 'course') ? 'menubar-item-active' : '' }}"   routeDirection="{{ route('admin.course.course-list') }}"  text="کۆرس" />
-                <x-dashboard-tile icon="fa fa-plus"  inner-route-direction="{{route('admin.course.group')}}" is-icon-needed="true"  cssClass=" course-item   {{    str_contains(request()->getPathInfo(), 'group') ? 'menubar-item-active' : '' }}"   routeDirection="{{ route('admin.course.group-list') }}"  text="گروپ" />
-                <x-dashboard-tile icon="fa fa-plus"  inner-route-direction="{{route('admin.course.subscribers')}}" is-icon-needed="true"  cssClass=" course-item   {{    str_contains(request()->getPathInfo(), 'subscriber') ? 'menubar-item-active' : '' }}"   routeDirection="{{ route('admin.course.subscriber-list') }}"  text="بەشداربووان" />
+                <x-dashboard-tile icon="fa fa-plus" inner-route-direction="{{ route('admin.course.course') }}"
+                    is-icon-needed="true"
+                    cssClass=" course-item   {{ str_contains(request()->getPathInfo(), 'course') ? 'menubar-item-active' : '' }}"
+                    routeDirection="{{ route('admin.course.course-list') }}" text="کۆرس" />
+                <x-dashboard-tile icon="fa fa-plus" inner-route-direction="{{ route('admin.course.group') }}"
+                    is-icon-needed="true"
+                    cssClass=" course-item   {{ str_contains(request()->getPathInfo(), 'group') ? 'menubar-item-active' : '' }}"
+                    routeDirection="{{ route('admin.course.group-list') }}" text="گروپ" />
+                <x-dashboard-tile icon="fa fa-plus" inner-route-direction="{{ route('admin.course.subscribers') }}"
+                    is-icon-needed="true"
+                    cssClass=" course-item   {{ str_contains(request()->getPathInfo(), 'subscriber') ? 'menubar-item-active' : '' }}"
+                    routeDirection="{{ route('admin.course.subscriber-list') }}" text="بەشداربووان" />
 
                 <div class="menubar-item  people-item ">
                     <a>گشتی</a>
                 </div>
-                <x-dashboard-tile icon="fa fa-plus"  inner-route-direction="{{route('admin.staff.add-writer')}}" is-icon-needed="true"  cssClass=" people-item   {{    str_contains(request()->getPathInfo(), 'writer') ? 'menubar-item-active' : '' }}"   routeDirection="{{ route('admin.staff.writer') }}"  text="نووسەر" />
-                <x-dashboard-tile icon="fa fa-plus"  inner-route-direction="{{route('admin.staff.add-writer')}}" is-icon-needed="true"  cssClass=" people-item   {{    str_contains(request()->getPathInfo(), 'translator') ? 'menubar-item-active' : '' }}"   routeDirection="{{ route('admin.staff.translator') }}"  text="وەرگێڕ" />
-                <x-dashboard-tile icon="fa fa-plus"  inner-route-direction="{{route('admin.staff.add-lecturer')}}" is-icon-needed="true"  cssClass=" people-item   {{    str_contains(request()->getPathInfo(), 'lecturer') ? 'menubar-item-active' : '' }}"   routeDirection="{{ route('admin.staff.lecturer') }}"  text="وانەبێژ" />
+                <x-dashboard-tile icon="fa fa-plus" inner-route-direction="{{ route('admin.staff.add-writer') }}"
+                    is-icon-needed="true"
+                    cssClass=" people-item   {{ str_contains(request()->getPathInfo(), 'writer') ? 'menubar-item-active' : '' }}"
+                    routeDirection="{{ route('admin.staff.writer') }}" text="نووسەر" />
+                <x-dashboard-tile icon="fa fa-plus" inner-route-direction="{{ route('admin.staff.add-writer') }}"
+                    is-icon-needed="true"
+                    cssClass=" people-item   {{ str_contains(request()->getPathInfo(), 'translator') ? 'menubar-item-active' : '' }}"
+                    routeDirection="{{ route('admin.staff.translator') }}" text="وەرگێڕ" />
+                <x-dashboard-tile icon="fa fa-plus" inner-route-direction="{{ route('admin.staff.add-lecturer') }}"
+                    is-icon-needed="true"
+                    cssClass=" people-item   {{ str_contains(request()->getPathInfo(), 'lecturer') ? 'menubar-item-active' : '' }}"
+                    routeDirection="{{ route('admin.staff.lecturer') }}" text="وانەبێژ" />
 
-                <div class="menubar-item  setting-item ">
-                    <a>بەکارهێنەر</a>
-                </div>
+                <x-dashboard-tile icon="fa fa-plus" inner-route-direction="{{ route('admin.setting.users') }}"
+                    is-icon-needed="true"
+                    cssClass=" setting-item  {{ str_contains(request()->getPathInfo(), 'users') ? 'menubar-item-active' : '' }}"
+                    routeDirection="{{ route('admin.setting.users-list') }}" text="بەکارهێنەر" />
+
                 <div class="menubar-item  setting-item ">
                     <a>دەسەڵاتەکان</a>
                 </div>
-                <x-dashboard-tile icon="fa fa-plus"  cssClass=" setting-item  {{    str_contains(request()->getPathInfo(), 'documents') ? 'menubar-item-active' : '' }}"   routeDirection="{{ route('admin.setting.document') }}"  text="بەڵگەنامەکان" />
-                <x-dashboard-tile icon="fa fa-plus"  cssClass=" setting-item  {{    str_contains(request()->getPathInfo(), 'edu_level') ? 'menubar-item-active' : '' }}"   routeDirection="{{ route('admin.setting.education-level') }}"  text="ئاستی زانستی" />
+                <x-dashboard-tile icon="fa fa-plus"
+                    cssClass=" setting-item  {{ str_contains(request()->getPathInfo(), 'documents') ? 'menubar-item-active' : '' }}"
+                    routeDirection="{{ route('admin.setting.document') }}" text="بەڵگەنامەکان" />
+                <x-dashboard-tile icon="fa fa-plus"
+                    cssClass=" setting-item  {{ str_contains(request()->getPathInfo(), 'edu_level') ? 'menubar-item-active' : '' }}"
+                    routeDirection="{{ route('admin.setting.education-level') }}" text="ئاستی زانستی" />
             </div>
         </div>
     </div>
@@ -94,14 +138,14 @@
         })
     </script>
 
-{{--    <script> --}}
-{{--    left to right menu active --}}
-{{--        $('.iconbar-icon').on('click',function(){ --}}
-{{--            $('.iconbar-icon').removeClass('icon-bar-active'); --}}
-{{--            $(this).addClass(' icon-bar-active'); --}}
-{{--            $(this).find('.sidenav-bridge').addClass('move-bridge') --}}
-{{--        }) --}}
-{{--    </script> --}}
+    {{--    <script> --}}
+    {{--    left to right menu active --}}
+    {{--        $('.iconbar-icon').on('click',function(){ --}}
+    {{--            $('.iconbar-icon').removeClass('icon-bar-active'); --}}
+    {{--            $(this).addClass(' icon-bar-active'); --}}
+    {{--            $(this).find('.sidenav-bridge').addClass('move-bridge') --}}
+    {{--        }) --}}
+    {{--    </script> --}}
     <script>
         var iconbar_icon = document.querySelectorAll('.iconbar-icon');
         var menuber_item = document.querySelectorAll('.menubar-item');

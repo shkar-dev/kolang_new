@@ -13,10 +13,12 @@ class DeleteItemButton extends Component
      */
     public $routeName;
     public $id;
-    public function __construct($id, $routeName)
+    public $parent;
+    public function __construct($id, $routeName, $parent  = null)
     {
         $this->id = $id;
         $this->routeName = $routeName;
+        $this->parent  = $parent;
     }
 
     /**

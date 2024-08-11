@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                             <p class="py-3"> زیادکردنی وێنە</p>
-                            <input type="file" class="filepond" name='image' accept="image/*">
+                            <input type="file" class="filepond" name='profile' accept="image/*">
                             <button type="submit" class="btn btn-primary">save</button>
                         </form>
                     </div>

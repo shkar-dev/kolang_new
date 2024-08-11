@@ -117,13 +117,14 @@
                                         <x-input-text name='city' title='شار' type='text' isValid='true' />
                                     </div>
                                     <div class=" col ">
-                                        <x-input-select-academic_level name="academic" title="ئاستی زانستی "
+                                        <x-input-select-academic_level name="academic_level_id" title="ئاستی زانستی "
                                             :options="$academicLevels" content="2" />
                                     </div>
                                 </div>
+
                                 <div class="row pt-4">
                                     <p>زیادکردنی وێنە</p>
-                                    <input type="file" class="filepond" name="image" accept="image/*">
+                                    <input type="file" class="filepond" name="profile" accept="image/*">
                                 </div>
                                 <button class="btn btn-primary" type="submit">Save</button>
                         </form>

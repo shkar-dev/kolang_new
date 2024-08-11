@@ -1,4 +1,5 @@
 <div class="heading-section-buttons">
+
     <div class="list-button-item list-title">
         <h3>{{ $title }}</h3>
     </div>
@@ -25,27 +26,27 @@
             <i class="fa-solid fa-filter"></i>
         </button>
 
-        <livewire:admin.subject.filter-modal :subjectType="$title" :isGeneral="$isGeneral"/>
+        <livewire:admin.subject.filter-modal :subjectType="$title" :isGeneral="$isGeneral" />
     </div>
 </div>
+
 <script>
     $('#filterbox').hide();
     var check = false;
     var check_add_btn = false;
-
     $('#filter').on('click', function() {
+
         if (!check) {
             canBeClosed = true;
             check = !check;
             $(this).addClass('active-sort-button')
-            $('#filterbox').fadeIn()
+            $('#filterbox').show()
         } else {
             check = !check;
             $(this).removeClass('active-sort-button')
-            $('#filterbox').fadeOut()
+            $('#filterbox').hide()
         }
     })
-
     $('#add-btn').on('click', function() {
         if (!check_add_btn) {
             check_add_btn = !check_add_btn;
@@ -56,6 +57,5 @@
             $(this).removeClass('active-add-button')
             // $('#add-btn').fadeOut()
         }
-
     })
 </script>

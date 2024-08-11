@@ -18,7 +18,13 @@
                             <div class="row p-2">
                                 <p>هاوپێچ</p>
                                 <input type="file" class="filepond  " id="attachment" name="attachment">
+
                             </div>
+                            @error('attachment')
+                                <div class="row px-3">
+                                    <p class="input-invalid-text"> {{ $message }} </p>
+                                </div>
+                            @enderror
                             <div class="row justify-content-center p-3">
                                 <div class="row p-0">
                                     <div class=" col-12 ">

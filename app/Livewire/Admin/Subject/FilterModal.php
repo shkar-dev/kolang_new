@@ -9,27 +9,29 @@ use PhpParser\Node\Expr\Cast\Object_;
 class FilterModal extends Component
 {
     public $isGeneral;
-    public  $filter ;
+    public  $filter;
     public  $subjectId;
     public  $subject;
-    public  $subjectType ;
-    public  $startDate ;
-    public  $endDate ;
-    public  $author ;
-    public  $translator  ;
-    public function clear(){
-        $this->subjectId="";
-        $this->subject="";
-        $this->startDate="";
-        $this->endDate="";
-        $this->author="";
-        $this->translator="";
-        $this->startDate="";
-        $this->endDate="";
+    public  $subjectType;
+    public  $startDate;
+    public  $endDate;
+    public  $author;
+    public  $translator;
+    public function clear()
+    {
+        $this->subjectId = "";
+        $this->subject = "";
+        $this->startDate = "";
+        $this->endDate = "";
+        $this->author = "";
+        $this->translator = "";
+        $this->startDate = "";
+        $this->endDate = "";
         $this->changeFilter();
     }
-    public function changeFilter(){
-        $this->dispatch('change-filter',$this->subjectId,$this->subject,$this->subjectType,$this->author,$this->startDate,$this->endDate,$this->translator);
+    public function changeFilter()
+    {
+        $this->dispatch('change-filter', $this->subjectId, $this->subject, $this->subjectType, $this->author, $this->startDate, $this->endDate, $this->translator);
     }
     public function render()
     {

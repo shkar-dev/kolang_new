@@ -8,12 +8,14 @@ use App\Http\Requests\Admin\CourseRequest;
 use App\Models\Course;
 use App\Models\CourseAttachment;
 use App\Models\TmpImage;
+use App\Traits\WithRemoveStorageImage;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
 {
+    use WithRemoveStorageImage;
     public function addCourse(CourseRequest $request)
     {
         try {
@@ -36,7 +38,9 @@ class CourseController extends Controller
 
     public function editCourse($id)
     {
+        // try {
         $course = Course::where('id', $id)->first();
+
         $course_attachments  = CourseAttachment::join('courses', 'course_attachments.course_id', '=', 'courses.id')
             ->where('course_id', '=', $id)
             ->select('course_attachments.*', 'courses.name as courseName')
@@ -47,8 +51,11 @@ class CourseController extends Controller
         // ->select('posts.*', 'categories.name as category_name')
         // ->get();
         return  view('livewire.admin.lecture.course', compact('course', 'course_attachments'));
+        // } catch (Exception $e) {
+        //     abort(404);
+        // }
     }
-    public function updateCourse(Request $request)
+    public function updateCourse(CourseRequest $request)
     {
         try {
             // $tmpImage = TmpImage::where('folder', '=', $request->image)->first();
@@ -71,11 +78,19 @@ class CourseController extends Controller
     public function deleteCourse(Request $request)
     {
 
+
         DB::beginTransaction();
         try {
-            Course::destroy($request->id);
-            DB::commit();
-            return redirect()->back()->with('success', 'Course deleted successfully');
+            $course = Course::where('id', '=', $request->id)->first();
+            if ($course) {
+                if ($this->RemoveStorageImage($course->image, 'covers')) {
+                    Course::destroy($request->id);
+                }
+                DB::commit();
+                return redirect()->back()->with('success', 'Course deleted successfully');
+            } else {
+                return redirect()->back()->with('failed', 'course not found');
+            }
         } catch (Exception $e) {
             DB::rollBack();
             if ($e->getCode() == 23000)
@@ -85,22 +100,28 @@ class CourseController extends Controller
     }
 
 
-    public function addAttachment(Request $request)
+    public function addAttachment(CourseAttachmentRequest $request)
     {
-        $data = json_decode($request->attachment);
-        $course_attachment = CourseAttachment::create([
-            'name' => $request->name,
-            'path' => $data->folder . '/' . $data->filename,
-            'course_id' => $request->course_id
-        ]);
 
-        return redirect()->back()->with('success', 'attachmeent added successfully');
+        try {
+            $data = json_decode($request->attachment);
+            $course_attachment = CourseAttachment::create([
+                'name' => $request->name,
+                'path' => $data->folder . '/' . $data->filename,
+                'course_id' => $request->course_id
+            ]);
+            return redirect()->back()->with('success', 'attachmeent added successfully');
+        } catch (Exception $e) {
+            return redirect()->back()->with('failed', $e->getMessage());
+        }
     }
     public function deleteCourseAttachment(Request $request)
     {
 
         DB::beginTransaction();
         try {
+
+
             CourseAttachment::destroy($request->id);
             DB::commit();
             return redirect()->back()->with('success', 'Course Attachment deleted successfully');

@@ -80,6 +80,11 @@
                                     <div class=" col ">
                                         <x-input-text name='password' title=' وشەی تێپەڕ  ' type='text' isValid='true' />
                                     </div>
+                                    <div class=" col ">
+                                        <x-input-select-academic_level name="academic_level_id" title="ئاستی زانستی "
+                                            :options="$academicLevel"
+                                            content="{{ $lecturer != null ? $lecturer->academic_level_id : '' }}" />
+                                    </div>
                                 </div>
                             </div>
                             <div class="row ">
@@ -88,9 +93,10 @@
                                         content="{{ $lecturer != null ? $lecturer->description : '' }}" />
                                 </div>
                             </div>
+
                             <div class="row pt-2">
                                 <p class="py-3">زیادکردنی وێنە</p>
-                                <input type="file" name="image" class="filepond" accept="image/*">
+                                <input type="file" name="profile" class="filepond" accept="image/*">
                             </div>
                             <button type="submit" class="btn btn-primary"> save</button>
                         </form>

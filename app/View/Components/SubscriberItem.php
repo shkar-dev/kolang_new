@@ -12,9 +12,15 @@ class SubscriberItem extends Component
      * Create a new component instance.
      */
     public $class;
-    public function __construct($class="col-4")
+    public $content;
+    public $isCheckAvailable;
+    public $id;
+    public function __construct($class = "col-4", $content = null, $isCheckAvailable = true, $id = '')
     {
-        $this->class=$class;
+        $this->class = $class;
+        $this->content = $content;
+        $this->isCheckAvailable = $isCheckAvailable;
+        $this->id = $id;
     }
 
     /**

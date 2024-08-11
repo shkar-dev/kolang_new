@@ -12,8 +12,10 @@ class Group extends Component
     public $lecturers;
     public $courses;
     public $supervisors;
+    public $subscribers;
     public function mount()
     {
+
         $this->lecturers = Member::where('type', '=', 'lecturer')->get();
         $this->courses = Course::all();
         $this->supervisors = $this->lecturers;

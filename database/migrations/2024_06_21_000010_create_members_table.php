@@ -19,10 +19,11 @@ return new class extends Migration
             $table->string('mobile_1', 16)->nullable();
             $table->string('mobile_2', 16)->nullable();
             $table->string('mobile_3', 16)->nullable();
-            // $table->foreignId('academic_level_id')->constrained('academic_levels')->nullable();
+            $table->string('image')->nullable();
+            $table->foreignId('academic_level_id')->constrained('academic_levels')->nullable();
             $table->enum('gender', ['male', 'female'])->nullable();
-            // $table->foreignId('user_id')->constrained('users')->nullable();
-            // $table->foreignId('account_id')->constrained('accounts')->nullable();
+            $table->foreignId('user_id')->constrained('users')->nullable();
+            $table->foreignId('account_id')->constrained('accounts')->nullable();
             $table->timestamps();
         });
     }

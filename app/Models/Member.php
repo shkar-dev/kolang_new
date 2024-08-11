@@ -18,6 +18,8 @@ class Member extends Model
         'mobile_3',
         'academic_level_id',
         'gender',
+        'user_id',
+        'image'
     ];
 
     public function academicLevel()
